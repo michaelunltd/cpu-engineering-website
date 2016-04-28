@@ -1,0 +1,25 @@
+= form_for form_model, url: {action: action} do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
+  .row
+    .form-group
+      = f.label :title
+      = f.text_field :title, class: "form-control"
+    .form-group
+      = f.label :content
+      = f.text_field :content, size: "150", class: "form-control"
+    .form-group
+      = f.label :image
+      = f.file_field :image, class: "form-control"
+    .form-group
+      = f.label :author
+      = f.text_field :author, class:"form-control"
+    .row
+      %div
+        = f.submit action.capitalize + " News"

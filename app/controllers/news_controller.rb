@@ -1,5 +1,6 @@
 class NewsController < ApplicationController
   before_action :find_news, only: [:show, :edit, :destroy, :update]
+
   def index
     @news = News.all
   end
@@ -12,18 +13,7 @@ class NewsController < ApplicationController
   end
 
   def create
-    @title = params[:news][:title]
-    @content = params[:news][:content]
-    @author = params[:news][:author]
-    @real_img_path = params[:news][:img_path].path
-
-    @news = News.new(
-      title: @title,
-      content: @content,
-      img_path: @real_img_path,
-      author: @author
-    )
-
+    @news = News.new(news_params)
 
     if @news.save
       redirect_to news_index_path
@@ -37,14 +27,11 @@ class NewsController < ApplicationController
   end
 
   def update
-    @title = params[:news][:title]
-    @content = params[:news][:content]
-    @author = params[:news][:author]
-    @real_img_path = params[:news][:img_path].path
 
-    if @news.update( title: @title, content: @content, img_path: @real_img_path, author: @author)
+    if @news.update(news_params)
       redirect_to news_index_path
     else
+      flash[:notice] = 'News WAS NOT updated.'
       render :edit
     end
   end
@@ -58,7 +45,7 @@ class NewsController < ApplicationController
 private
 
   def news_params
-    params.require(:news).permit(:title, :content, :img_path, :author)
+    params.require(:news).permit(:title, :content, :image, :author)
   end
 
   def find_news
