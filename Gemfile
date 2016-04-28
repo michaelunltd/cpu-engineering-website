@@ -27,6 +27,8 @@ gem 'carrierwave'
 
 gem 'haml-rails'
 
+gem 'mini_magick'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -40,6 +42,7 @@ group :development do
   gem 'spring'
   #Others
   gem "awesome_print", require:"ap"
+  gem 'meta_request'
   gem "pry-rails"
   gem "better_errors"
   gem 'quiet_assets'

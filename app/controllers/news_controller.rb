@@ -27,6 +27,9 @@ class NewsController < ApplicationController
   end
 
   def update
+    if params[:news][:remove_image] == '1'
+      @news.remove_image!
+    end
 
     if @news.update(news_params)
       redirect_to news_index_path

@@ -1,21 +1,20 @@
-%h1 News#index
-= link_to new_news_path  do
+= link_to new_news_path do
   Add News
 %table{:border => "1"}
   %thead
     %tr
       %th Title
       %th Content
-      %th Image Path
+      %th Image
       %th Author
   - @news.each do |n|
     %tr
       %td= n.title
       %td= n.content
-      %td= n.img_path
+      %td= image_tag(n.image.thumb.url)
       %td= n.author
       %td
-        = link_to edit_news_path(n)  do
+        = link_to edit_news_path(n) do
           Edit News
       %td
         = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do

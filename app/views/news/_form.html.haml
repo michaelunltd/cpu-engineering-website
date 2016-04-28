@@ -1,11 +1,11 @@
 = form_for form_model, url: {action: action} do |f|
-  - if @user.errors.any?
-    #error_explanation
+  - if form_model.errors.any?
+    %div
       %h2
-        = pluralize(@user.errors.count, "error")
+        = pluralize(form_model.errors.count, 'error')
         prohibited this user from being saved:
       %ul
-        - @user.errors.full_messages.each do |message|
+        - form_model.errors.full_messages.each do |message|
           %li= message
   .row
     .form-group
@@ -13,13 +13,20 @@
       = f.text_field :title, class: "form-control"
     .form-group
       = f.label :content
-      = f.text_field :content, size: "150", class: "form-control"
+      = f.text_area :content, size: "150", class: "form-control"
     .form-group
+      = image_tag(form_model.image.thumb.url) if form_model.image?
       = f.label :image
       = f.file_field :image, class: "form-control"
+      = f.hidden_field :image_cache
+    - if form_model.image?
+      .form-group
+        %label
+          = f.check_box :remove_image
+          Remove avatar
     .form-group
       = f.label :author
       = f.text_field :author, class:"form-control"
-    .row
-      %div
-        = f.submit action.capitalize + " News"
+  .row
+    %div
+      = f.submit action.capitalize + " News"
