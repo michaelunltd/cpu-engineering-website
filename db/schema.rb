@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160428032402) do
   create_table "news", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "img_path"
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
