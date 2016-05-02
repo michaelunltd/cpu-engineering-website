@@ -1,4 +1,4 @@
-class NewsController < ApplicationController
+  class NewsController < ApplicationController
   before_action :find_news, only: [:show, :edit, :destroy, :update]
 
   def index
@@ -49,9 +49,9 @@ private
 
   def news_params
     params.require(:news).permit(:title, :content, :image, :author)
-  end
+  end  
 
-  def find_news
+  def find_news 
     @news = News.find params[:id]
   end
 end

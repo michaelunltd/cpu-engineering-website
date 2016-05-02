@@ -50,6 +50,8 @@ group :development do
   gem "pry-rails"
   gem "better_errors"
   gem 'quiet_assets'
+  gem 'momentjs-rails', '>= 2.9.0'
+  gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 end
 

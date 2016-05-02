@@ -49,6 +49,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap3-datetimepicker-rails (4.17.37)
+      momentjs-rails (>= 2.8.1)
     bootswatch-rails (3.3.5)
       railties (>= 3.1)
     builder (3.2.2)
@@ -111,6 +113,8 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    momentjs-rails (2.11.1)
+      railties (>= 3.1)
     multi_json (1.11.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -206,6 +210,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   bootstrap-sass (~> 3.3.6)
+  bootstrap3-datetimepicker-rails (~> 4.17.37)
   bootswatch-rails
   byebug
   carrierwave
@@ -215,6 +220,7 @@ DEPENDENCIES
   jquery-rails
   meta_request
   mini_magick
+  momentjs-rails (>= 2.9.0)
   pry-rails
   quiet_assets
   rails (= 4.2.6)

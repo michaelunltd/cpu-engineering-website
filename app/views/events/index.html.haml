@@ -1,0 +1,25 @@
+= link_to new_event_path do
+	Add Event
+%table{:border => "1"}
+	%thead
+		%tr
+			%th Title
+			%th Description
+			%th Image
+			%th Venue
+			%th Start Date
+			%th End Date
+	- @events.each do |n|
+		%tr
+			%td= n.title
+			%td= n.description
+			%td= image_tag(n.image.thumb.url)
+			%td= n.venue
+			%td= n.startDate
+			%td= n.endDate
+			%td
+				= link_to edit_event_path(n) do
+					Edit Event
+			%td
+				= link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+					Delete

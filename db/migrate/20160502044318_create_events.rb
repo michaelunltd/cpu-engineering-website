@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.text :description
       t.string :venue
       t.string :image
-      t.date :startDate
-      t.date :endDate
+      t.datetime :startDate
+      t.datetime :endDate
 
       t.timestamps null: false
     end
