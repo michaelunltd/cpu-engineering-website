@@ -8,4 +8,9 @@
     = csrf_meta_tags
   %body
     = render "shared/navbar"
-    = yield
+    .container-fluid
+      .row
+        .col-md-10.col-md-offset-1.main
+          .row
+            = yield
+    =render "shared/footer"

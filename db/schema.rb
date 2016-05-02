@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160502044318) do
-=======
 ActiveRecord::Schema.define(version: 20160502075407) do
 
   create_table "departments", force: :cascade do |t|
@@ -27,19 +24,14 @@ ActiveRecord::Schema.define(version: 20160502075407) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
->>>>>>> 3f9c6528bd34a4d79169faea499d34ab74ba0e2c
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "venue"
     t.string   "image"
-<<<<<<< HEAD
     t.datetime "startDate"
     t.datetime "endDate"
-=======
-    t.date     "startDate"
-    t.date     "endDate"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -48,7 +40,6 @@ ActiveRecord::Schema.define(version: 20160502075407) do
     t.string   "name"
     t.string   "description"
     t.string   "image"
->>>>>>> 3f9c6528bd34a4d79169faea499d34ab74ba0e2c
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -56,7 +47,6 @@ ActiveRecord::Schema.define(version: 20160502075407) do
   create_table "news", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "img_path"
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
