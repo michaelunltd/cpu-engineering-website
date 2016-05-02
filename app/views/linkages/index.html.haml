@@ -1,35 +1,33 @@
 .container
-  %h1 News#index
+  %h1 Linkage#index
   .pull-right
-    = link_to new_news_path do
+    = link_to new_linkage_path do
       %button.btn.btn-success.btn-sm{:role=> "button"}
         %i.glyphicon.glyphicon-plus
-          News
+          Linkage
 
   %table.table.table-striped
     %thead
       %tr
-        %th Title
-        %th Content
+        %th Name
+        %th Description
         %th Image
-        %th Author
         %th Edit
         %th Delete
 
     %tbody
-    - @news.each do |n|
+    - @linkages.each do |linkage|
       %tr
-        %td= n.title
-        %td= raw n.content
-        %td= image_tag(n.image.thumb.url)
-        %td= n.author
+        %td= linkage.name
+        %td= linkage.description
+        %td= image_tag(linkage.image.thumb.url)
         %td
-          = link_to edit_news_path(n) do
+          = link_to edit_linkage_path(linkage) do
             %button.btn.btn-success.btn-sm{:role=>"button"}
               %i.glyphicon.glyphicon-edit
-              Edit News
+              Edit Linkage
         %td
-          = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+          = link_to linkage, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
             %button.btn.btn-danger.btn-sm{:role=>"button"}
               %i.glyphicon.glyphicon-trash
                 Delete

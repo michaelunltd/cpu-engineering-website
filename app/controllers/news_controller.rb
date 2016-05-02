@@ -48,8 +48,13 @@
 private
 
   def news_params
+<<<<<<< HEAD
     params.require(:news).permit(:title, :content, :image, :author)
   end  
+=======
+    params.require(:news).permit(:title, :content, :image, :image_cache, :author)
+  end
+>>>>>>> 3f9c6528bd34a4d79169faea499d34ab74ba0e2c
 
   def find_news 
     @news = News.find params[:id]

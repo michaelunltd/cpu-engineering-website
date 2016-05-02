@@ -28,6 +28,11 @@ gem 'carrierwave'
 gem 'haml-rails'
 
 gem 'mini_magick'
+gem 'tinymce-rails'
+
+
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootswatch-rails'
 
 
 gem 'bootstrap-sass', '~> 3.3.6'
