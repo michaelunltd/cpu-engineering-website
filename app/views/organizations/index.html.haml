@@ -1,0 +1,39 @@
+
+
+.container
+  %h1 Organization#index
+  .pull-right
+    = link_to new_organization_path do
+      %button.btn.btn-success.btn-sm{:role=> "button"}
+        %i.glyphicon.glyphicon-plus
+          Organization
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Name
+        %th About
+        %th Vision
+        %th Mission
+        %th Logo
+        %th Edit
+        %th Delete
+
+    %tbody
+    - @organizations.each do |organization|
+      %tr
+        %td= organization.name
+        %td= raw organization.about
+        %td= raw organization.vision
+        %td= raw organization.mission
+        %td= image_tag(organization.logo.thumb.url)
+        %td
+          = link_to edit_organization_path(organization) do
+            %button.btn.btn-success.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-edit
+              Edit Organization
+        %td
+          = link_to organization, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+            %button.btn.btn-danger.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-trash
+                Delete

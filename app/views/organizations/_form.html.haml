@@ -1,0 +1,38 @@
+= form_for form_model, url: {action: action} do |f|
+  - if form_model.errors.any?
+    %div
+      %h2
+        = pluralize(form_model.errors.count, 'error')
+        prohibited this department from being saved:
+      %ul
+        - form_model.errors.full_messages.each do |message|
+          %li= message
+
+  .container
+    .row
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label :about
+        = f.text_area :about, size: "150", class: "tinymce"
+      .form-group
+        = f.label :vision
+        = f.text_area :vision, size: "150", class:"tinymce"
+      .form-group
+        = f.label :mission
+        = f.text_area :mission, size: "150", class:"tinymce"
+        = tinymce
+      .form-group
+        = image_tag(form_model.logo.thumb.url) if form_model.logo?
+        = f.label :logo
+        = f.file_field :logo, class: "form-control"
+        = f.hidden_field :logo_cache
+      - if form_model.logo?
+        .form-group
+          %label
+            = f.check_box :remove_logo
+            Remove avatar
+    .row
+      %div
+        = f.submit action.capitalize + " Organization"

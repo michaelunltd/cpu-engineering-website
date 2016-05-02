@@ -27,8 +27,8 @@ before_action :find_department, only: [:show, :edit, :destroy, :update]
   end
 
   def update
-    if params[:department][:remove_image] == '1'
-      @department.remove_image!
+    if params[:department][:remove_logo] == '1'
+      @department.remove_logo!
     end
 
     if @department.update(department_params)
