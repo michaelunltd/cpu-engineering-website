@@ -7,13 +7,15 @@
       %ul
         - form_model.errors.full_messages.each do |message|
           %li= message
+
   .row
     .form-group
       = f.label :title
       = f.text_field :title, class: "form-control"
     .form-group
       = f.label :content
-      = f.text_area :content, size: "150", class: "form-control"
+      = f.text_area :content, size: "150", class: "tinymce"
+      = tinymce
     .form-group
       = image_tag(form_model.image.thumb.url) if form_model.image?
       = f.label :image

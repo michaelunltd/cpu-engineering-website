@@ -28,6 +28,11 @@ gem 'carrierwave'
 gem 'haml-rails'
 
 gem 'mini_magick'
+gem 'tinymce-rails'
+
+
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootswatch-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,4 +51,8 @@ group :development do
   gem "pry-rails"
   gem "better_errors"
   gem 'quiet_assets'
+
 end
+
+#For windows users to fix TZInfo::DataSourceNotFound error
+gem 'tzinfo-data'

@@ -1,21 +1,33 @@
-= link_to new_news_path do
-  Add News
-%table{:border => "1"}
+.pull-right
+  = link_to new_news_path do
+    %button.btn.btn-success.btn-sm{:role=> "button"}
+      %i.glyphicon.glyphicon-plus
+        News
+
+%table.table.table-striped
   %thead
     %tr
       %th Title
       %th Content
       %th Image
       %th Author
+      %th Edit
+      %th Delete
+
+  %tbody
   - @news.each do |n|
     %tr
       %td= n.title
-      %td= n.content
+      %td= raw n.content
       %td= image_tag(n.image.thumb.url)
       %td= n.author
       %td
         = link_to edit_news_path(n) do
-          Edit News
+          %button.btn.btn-success.btn-sm{:role=>"button"}
+            %i.glyphicon.glyphicon-edit
+            Edit News
       %td
         = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
-          Delete
+          %button.btn.btn-danger.btn-sm{:role=>"button"}
+            %i.glyphicon.glyphicon-trash
+              Delete
