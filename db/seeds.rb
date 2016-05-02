@@ -10,13 +10,13 @@
 News.create(
   title: "Lorem Ipsum",
   content: "EASSSDSDWEWEWMIEMIEWME",
-  img_path: "/img/shit/la",
+  image: "/img/shit/la",
   author: "Mr Right",
 )
 
 News.create(
   title: "Ipsum Lorem",
   content: "Hadahshwuuhuhuh",
-  img_path: "/img/shit/la/ba",
+  image: "/img/shit/la/ba",
   author: "Mr Right2",
 )
