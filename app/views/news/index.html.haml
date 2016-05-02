@@ -1,33 +1,35 @@
-.pull-right
-  = link_to new_news_path do
-    %button.btn.btn-success.btn-sm{:role=> "button"}
-      %i.glyphicon.glyphicon-plus
-        News
+.container
+  %h1 News#index
+  .pull-right
+    = link_to new_news_path do
+      %button.btn.btn-success.btn-sm{:role=> "button"}
+        %i.glyphicon.glyphicon-plus
+          News
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th Title
-      %th Content
-      %th Image
-      %th Author
-      %th Edit
-      %th Delete
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Content
+        %th Image
+        %th Author
+        %th Edit
+        %th Delete
 
-  %tbody
-  - @news.each do |n|
-    %tr
-      %td= n.title
-      %td= raw n.content
-      %td= image_tag(n.image.thumb.url)
-      %td= n.author
-      %td
-        = link_to edit_news_path(n) do
-          %button.btn.btn-success.btn-sm{:role=>"button"}
-            %i.glyphicon.glyphicon-edit
-            Edit News
-      %td
-        = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
-          %button.btn.btn-danger.btn-sm{:role=>"button"}
-            %i.glyphicon.glyphicon-trash
-              Delete
+    %tbody
+    - @news.each do |n|
+      %tr
+        %td= n.title
+        %td= raw n.content
+        %td= image_tag(n.image.thumb.url)
+        %td= n.author
+        %td
+          = link_to edit_news_path(n) do
+            %button.btn.btn-success.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-edit
+              Edit News
+        %td
+          = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+            %button.btn.btn-danger.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-trash
+                Delete
