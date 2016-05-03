@@ -1,3 +1,5 @@
+-# TODO: Make image better placed in the form.
+-# TODO: To copy file preview code to the rest of the _forms with file uploads
 = form_for form_model, url: {action: action} do |f|
   - if form_model.errors.any?
     %div
@@ -7,7 +9,6 @@
       %ul
         - form_model.errors.full_messages.each do |message|
           %li= message
-
   .container
     .row
       .form-group

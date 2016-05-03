@@ -35,6 +35,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'bootswatch-rails'
 
+gem 'sorcery'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

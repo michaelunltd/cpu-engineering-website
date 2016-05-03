@@ -1,0 +1,23 @@
+= form_for form_model, url: {action: action} do |f|
+  - if form_model.errors.any?
+    %div
+      %h2
+        = pluralize(form_model.errors.count, 'error')
+        prohibited this news from being saved:
+      %ul
+        - form_model.errors.full_messages.each do |message|
+          %li= message
+  .container
+    .row
+      .form-group
+        = f.label :username
+        = f.text_field :username, class: 'form-control'
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control'
+      .form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: 'form-control'
+    .row
+      %div
+        = f.submit 'Submit' 
