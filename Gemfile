@@ -28,20 +28,12 @@ gem 'carrierwave'
 gem 'haml-rails'
 
 gem 'mini_magick'
+
 gem 'tinymce-rails'
 
-
 gem 'bootstrap-sass', '~> 3.3.6'
+
 gem 'bootswatch-rails'
-
-
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'bootswatch-rails'
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -49,7 +41,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  #Others
+
+  # Others
   gem "awesome_print", require:"ap"
   gem 'meta_request'
   gem "pry-rails"
@@ -60,5 +53,5 @@ group :development do
 
 end
 
-#For windows users to fix TZInfo::DataSourceNotFound error
+# For windows users to fix TZInfo::DataSourceNotFound error
 gem 'tzinfo-data'
