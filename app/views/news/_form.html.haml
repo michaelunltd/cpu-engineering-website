@@ -18,9 +18,9 @@
         = f.text_area :content, size: "150", class: "tinymce"
         = tinymce
       .form-group
-        = image_tag(form_model.image.thumb.url) if form_model.image?
+        = image_tag(form_model.image.thumb.url, id: 'img_prev')
         = f.label :image
-        = f.file_field :image, class: "form-control"
+        = f.file_field :image, class: "form-control", onchange: 'readURL(this)'
         = f.hidden_field :image_cache
       - if form_model.image?
         .form-group
@@ -42,7 +42,7 @@
       reader.onload = function (e) {
         $('#img_prev')
           .attr('src', e.target.result)
-          .width(150)
+          .width(200)
           .height(200);
       };
 
