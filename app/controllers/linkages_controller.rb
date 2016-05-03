@@ -37,7 +37,6 @@ class LinkagesController < ApplicationController
       flash[:notice] = "Linkage was not updated."
       render :edit
     end
-
   end
 
   def destroy
@@ -50,7 +49,6 @@ class LinkagesController < ApplicationController
 
   def linkage_params
     params.require(:linkage).permit(:name, :description, :image, :image_cache)
-
   end
 
   def find_linkage
