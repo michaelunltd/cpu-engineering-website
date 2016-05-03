@@ -11,9 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require bxslider
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-datetimepicker
 //= require tinymce
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
