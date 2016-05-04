@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :organizations
   resources :linkages
   resources :employees
+  resources :laboratories
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
