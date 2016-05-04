@@ -27,3 +27,6 @@ body {
 .bx-wrapper .bx-viewport{
     border: none !important;
 }
+.bx-wrapper img {
+    margin: 0 auto;
+}

@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # TODO: Add messages of success at deletion
   def destroy
     @user.destroy
-
+    flash[:success] = 'User was deleted.'
     redirect_to users_path
   end
 

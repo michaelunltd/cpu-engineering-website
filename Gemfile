@@ -64,4 +64,5 @@ end
 # For windows users to fix TZInfo::DataSourceNotFound error
 gem 'tzinfo-data'
 
+gem 'toastr-rails'
 gem 'bxslider-rails'
