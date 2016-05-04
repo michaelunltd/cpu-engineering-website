@@ -18,6 +18,14 @@
       .form-group
         = f.label :password_confirmation
         = f.password_field :password_confirmation, class: 'form-control'
+      .form-group
+        = f.label :role
+        = f.radio_button :role, 'Admin', checked: 'checked'
+        = f.label 'Admin'
+        = f.radio_button :role, 'Department Head'
+        = f.label 'Department Head'
+      .form-group
+        = f.label :department
+        = f.select :department_id, @departments.collect {|department| [department.name, department.id]}
     .row
-      %div
-        = f.submit 'Submit' 
+      %div= f.submit 'Submit'

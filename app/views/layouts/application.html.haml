@@ -12,5 +12,9 @@
       .row
         .col-md-10.col-md-offset-1.main
           .row
+            #notice= flash[:notice]
+            #alert= flash[:alert]
+            #success= flash[:success]
+          .row
             = yield
-    =render "shared/footer"
+    = render "shared/footer"
