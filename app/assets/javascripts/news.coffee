@@ -7,7 +7,7 @@ readURL = (input) ->
     reader = new FileReader
 
     reader.onload = (e) ->
-      $('#img_prev').attr('src', e.target.result).width(150).height 200
+      $('#img_prev').attr('src', e.target.result).width(200).height 200
       return
 
     reader.readAsDataURL input.files[0]

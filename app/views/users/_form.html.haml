@@ -8,7 +8,7 @@
         - form_model.errors.full_messages.each do |message|
           %li= message
   .container
-    .row
+    .row#form_body
       .form-group
         = f.label :username
         = f.text_field :username, class: 'form-control'
@@ -24,7 +24,7 @@
         = f.label 'Admin'
         = f.radio_button :role, 'Department Head'
         = f.label 'Department Head'
-      .form-group
+      .form-group#department_form
         = f.label :department
         = f.select :department_id, @departments.collect {|department| [department.name, department.id]}
     .row
