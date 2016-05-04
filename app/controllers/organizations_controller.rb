@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
+  load_and_authorize_resource
   before_action :find_organization, only: [:show, :edit, :destroy, :update]
-
 
   def index
     @organizations = Organization.all

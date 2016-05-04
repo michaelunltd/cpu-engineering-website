@@ -1,4 +1,5 @@
 class DepartmentsController < ApplicationController
+load_and_authorize_resource
 before_action :find_department, only: [:show, :edit, :destroy, :update]
 
   def index
