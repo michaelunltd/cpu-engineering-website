@@ -18,18 +18,32 @@
         = f.text_area :content, size: "150", class: "tinymce"
         = tinymce
       .form-group
-        = image_tag(form_model.image.thumb.url) if form_model.image?
+        = image_tag(form_model.image.thumb.url, id: 'img_prev')
         = f.label :image
-        = f.file_field :image, class: "form-control"
+        = f.file_field :image, class: "form-control", onchange: 'readURL(this)'
         = f.hidden_field :image_cache
       - if form_model.image?
         .form-group
           %label
             = f.check_box :remove_image
-            Remove avatar
+            Remove image
       .form-group
         = f.label :author
         = f.text_field :author, class:"form-control"
     .row
       %div
         = f.submit action.capitalize + " News"
+
+:javascript
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#img_prev')
+          .attr('src', e.target.result)
+          .width(200)
+          .height(200);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
