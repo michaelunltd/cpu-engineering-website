@@ -1,25 +1,37 @@
-= link_to new_event_path do
-	Add Event
-%table{:border => "1"}
-	%thead
-		%tr
-			%th Title
-			%th Description
-			%th Image
-			%th Venue
-			%th Start Date
-			%th End Date
-	- @events.each do |n|
-		%tr
-			%td= n.title
-			%td= n.description
-			%td= image_tag(n.image.thumb.url)
-			%td= n.venue
-			%td= n.startDate
-			%td= n.endDate
-			%td
-				= link_to edit_event_path(n) do
-					Edit Event
-			%td
-				= link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
-					Delete
+.container
+  %h1 Event#index
+  .pull-right
+    = link_to new_event_path do
+      %button.btn.btn-success.btn-sm{:role=> "button"}
+        %i.glyphicon.glyphicon-plus
+          Event
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Description
+        %th Image
+        %th Venue
+        %th Start Date
+        %th End Date
+
+    %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.title
+        %td= event.description
+        %td= image_tag(event.image.thumb.url)
+        %td= event.venue
+        %td= event.startDate
+        %td= event.endDate
+        %td
+          = link_to edit_event_path(event) do
+            %button.btn.btn-success.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-edit
+              Edit event
+        %td
+          = link_to event, method: :delete, data: {confirm: 'Do you want to delete this event?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+            %button.btn.btn-danger.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-trash
+                Delete

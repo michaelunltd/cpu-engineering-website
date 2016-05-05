@@ -7,46 +7,47 @@
 			%ul
 				- form_model.errors.full_messages.each do |message|
 					%li= message
-	.row
-		.form-group
-			= f.label :title
-			= f.text_field :title, class: "form-control"
-		.form-group
-			= f.label :description
-			= f.text_area :description, size: "150", class: "form-control"
-		.form-group
-			= image_tag(form_model.image.thumb.url) if form_model.image?
-			= f.label :image
-			= f.file_field :image, class: "form-control"
-			= f.hidden_field :image_cache
-		- if form_model.image?
+	.container
+		.row
 			.form-group
-				%label
-					= f.check_box :remove_image
-					Remove Image
-		.form-group
-			= f.label :venue
-			= f.text_field :venue, class:"form-control"
-		.form-group
-			= f.label :startDate
-			#datetimepickerstart.input-group.date
-				= f.text_field :startDate, class:"form-control"
-				%span.input-group-addon
-					%span.glyphicon.glyphicon-calendar			
-		.form_group
-			= f.label :endDate
-			#datetimepickerend.input-group.date
-				= f.text_field :endDate, class:"form-control"
-				%span.input-group-addon
-					%span.glyphicon.glyphicon-calendar	
-	.row
-		%div
-			= f.submit action.capitalize + " Events"
+				= f.label :title
+				= f.text_field :title, class: "form-control"
+			.form-group
+				= f.label :description
+				= f.text_area :description, size: "150", class: "form-control"
+			.form-group
+				= image_tag(form_model.image.thumb.url) if form_model.image?
+				= f.label :image
+				= f.file_field :image, class: "form-control"
+				= f.hidden_field :image_cache
+			- if form_model.image?
+				.form-group
+					%label
+						= f.check_box :remove_image
+						Remove Image
+			.form-group
+				= f.label :venue
+				= f.text_field :venue, class:"form-control"
+			.form-group
+				= f.label :startDate
+				#datetimepickerstart.input-group.date
+					= f.text_field :startDate, class:"form-control"
+					%span.input-group-addon
+						%span.glyphicon.glyphicon-calendar
+			.form_group
+				= f.label :endDate
+				#datetimepickerend.input-group.date
+					= f.text_field :endDate, class:"form-control"
+					%span.input-group-addon
+						%span.glyphicon.glyphicon-calendar
+		.row
+			%div
+				= f.submit action.capitalize + " Event"
 
 :javascript
 	$(function () {
 				$('#datetimepickerstart').datetimepicker({
-					format: 'YYYY-MM-DD HH:mm A'				
+					format: 'YYYY-MM-DD HH:mm A'
 				});
 				$('#datetimepickerend').datetimepicker({
 					format: 'YYYY-MM-DD HH:mm A',

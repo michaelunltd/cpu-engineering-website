@@ -11,9 +11,41 @@
 // about supported directives.
 //
 //= require jquery
+//= require bxslider
+//= require toastr
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-datetimepicker
 //= require tinymce
+
+$(document).ready(function() {
+    $('.bxslider').bxSlider({
+        mode: 'fade',
+        captions: true
+    });
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#img_prev').attr('src', e.target.result).width(200).height(200);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "positionClass": "toast-bottom-right",
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
