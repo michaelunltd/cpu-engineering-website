@@ -11,12 +11,23 @@ Rails.application.routes.draw do
   get 'articles/index', as: 'articles'
   get 'articles/:id/toggle_featured' => 'articles#toggle_featured', as: 'toggle_featured'
 
+  get '/researches' => 'researches#show_all', as: "show_all_researches"
   resources :news
+
   resources :events
-  resources :departments
+
+  resources :departments do
+    resources :researches
+  end
+
   resources :organizations
+
   resources :linkages
+
   resources :employees
+  resources :facilities
+  resources :outreach_programs
+
   resources :laboratories
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

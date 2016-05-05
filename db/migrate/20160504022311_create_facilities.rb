@@ -1,6 +1,6 @@
-class CreateLaboratories < ActiveRecord::Migration
+class CreateFacilities < ActiveRecord::Migration
   def change
-    create_table :laboratories do |t|
+    create_table :facilities do |t|
       t.string :name
       t.text :description
       t.string :image

@@ -14,8 +14,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		event_params[:startDate] = DateTime.parse(event_params[:startDate])
-		event_params[:endDate] = DateTime.parse(event_params[:endDate])
+		event_params[:start_date] = DateTime.parse(event_params[:start_date])
+		event_params[:end_date] = DateTime.parse(event_params[:end_date])
 		@event = Event.new(event_params)
 		if @event.save
 			redirect_to events_path
@@ -29,8 +29,8 @@ class EventsController < ApplicationController
 	end
 
 	def update
-		event_params[:startDate] = DateTime.parse(event_params[:startDate])
-		event_params[:endDate] = DateTime.parse(event_params[:endDate])
+		event_params[:start_date] = DateTime.parse(event_params[:start_date])
+		event_params[:end_date] = DateTime.parse(event_params[:end_date])
 		if @event.update(event_params)
 			redirect_to events_path
 		else
@@ -48,7 +48,6 @@ private
 
 	def event_params
 		params.require(:event).permit(:title, :content, :image, :venue, :startDate, :endDate)
-    # params.require(:news).permit(:title, :content, :image, :author)
 	end
 
 	def find_event

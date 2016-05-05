@@ -49,7 +49,7 @@ class LinkagesController < ApplicationController
   private
 
   def linkage_params
-    params.require(:linkage).permit(:name, :description, :image, :image_cache)
+    params.require(:linkage).permit(:name, :description, :image, :image_cache, :department_id)
   end
 
   def find_linkage

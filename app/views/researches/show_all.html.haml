@@ -1,0 +1,20 @@
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Summary
+        %th Group Name
+        %th Department
+        %th Attachment Download
+
+
+
+    %tbody
+    - @researches.each do |research|
+      %tr
+        %td= research.title
+        %td= raw research.summary
+        %td= research.group_name
+        %td= research.department.name
+        %td= link_to "Download Attachment", research.attachment_url

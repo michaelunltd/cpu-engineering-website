@@ -41,12 +41,14 @@ ActiveRecord::Schema.define(version: 20160505065819) do
     t.string   "middle_name"
     t.string   "last_name"
     t.string   "photo"
-    t.string   "position"
     t.string   "honorifics"
     t.text     "counseling_hours"
+    t.integer  "department_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "venue"
@@ -56,7 +58,7 @@ ActiveRecord::Schema.define(version: 20160505065819) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "laboratories", force: :cascade do |t|
+  create_table "facilities", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "image"
@@ -68,9 +70,12 @@ ActiveRecord::Schema.define(version: 20160505065819) do
     t.string   "name"
     t.string   "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "department_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "linkages", ["department_id"], name: "index_linkages_on_department_id"
 
   create_table "news", force: :cascade do |t|
     t.string   "author"
@@ -87,6 +92,25 @@ ActiveRecord::Schema.define(version: 20160505065819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "outreach_programs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "researches", force: :cascade do |t|
+    t.string   "title"
+    t.text     "summary"
+    t.string   "group_name"
+    t.string   "attachment"
+    t.integer  "department_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "researches", ["department_id"], name: "index_researches_on_department_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",         null: false

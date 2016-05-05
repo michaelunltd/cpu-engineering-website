@@ -23,8 +23,8 @@
         %td= event.content
         %td= image_tag(event.image.thumb.url)
         %td= event.venue
-        %td= event.startDate
-        %td= event.endDate
+        %td= event.start_date
+        %td= event.end_date
         %td
           = link_to edit_event_path(event) do
             %button.btn.btn-success.btn-sm{:role=>"button"}

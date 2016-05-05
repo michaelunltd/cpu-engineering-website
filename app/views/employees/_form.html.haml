@@ -30,15 +30,15 @@
             = f.check_box :remove_photo
             Remove photo
       .form-group
-        = f.label :position
-        = f.text_field :position , class: "form-control"
-      .form-group
         = f.label :honorifics
         = f.text_field :honorifics , class: "form-control"
       .form-group
         = f.label :counseling_hours
         = f.text_area :counseling_hours , class: "tinymce"
         = tinymce
+      .form-group
+        = f.label :department
+        = f.collection_select :department_id, Department.all, :id, :name
     .row
       %div
         = f.submit action.capitalize + " Employee"
