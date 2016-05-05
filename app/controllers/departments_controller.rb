@@ -19,7 +19,7 @@ before_action :find_department, only: [:show, :edit, :destroy, :update]
     if @department.save
       redirect_to departments_path
     else
-      flash[:notice] = 'Department WAS NOT added.'
+      flash[:notice] = 'Department was not added.'
       render :new
     end
   end
@@ -35,7 +35,7 @@ before_action :find_department, only: [:show, :edit, :destroy, :update]
     if @department.update(department_params)
       redirect_to departments_path
     else
-      flash[:notice] = 'Department WAS NOT updated.'
+      flash[:notice] = 'Department was not updated.'
       render :edit
     end
   end
@@ -50,7 +50,7 @@ before_action :find_department, only: [:show, :edit, :destroy, :update]
   private
 
   def department_params
-    params.require(:department).permit(:name, :about, :message, :vision, :mission, :history, :logo, :logo_cache)
+    params.require(:department).permit(:name, :about, :message, :vision, :mission, :history, :logo, :logo_cache, :employees)
   end
 
   def find_department

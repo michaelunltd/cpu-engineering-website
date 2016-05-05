@@ -5,10 +5,9 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :middle_name
       t.string :last_name
       t.string :photo
-      t.string :position
       t.string :honorifics
       t.text :counseling_hours
-
+      t.belongs_to :department, index:true
       t.timestamps null: false
     end
   end

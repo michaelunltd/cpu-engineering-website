@@ -33,9 +33,12 @@ ActiveRecord::Schema.define(version: 20160505055938) do
     t.string   "position"
     t.string   "honorifics"
     t.text     "counseling_hours"
+    t.integer  "department_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
