@@ -1,0 +1,30 @@
+= form_for form_model, url: {action: action} do |f|
+	- if form_model.errors.any?
+		%div
+			%h2
+				= pluralize(form_model.errors.count, 'error')
+				prohibited this laboratory from being saved:
+			%ul
+				- form_model.errors.full_messages.each do |message|
+					%li= message
+	.container
+		.row
+			.form-group
+				= f.label :name
+				= f.text_field :name, class: "form-control"
+			.form-group
+				= f.label :description
+				= f.text_area :description, size: "150", class: "form-control"
+			.form-group
+				= image_tag(form_model.image.thumb.url) if form_model.image?
+				= f.label :image
+				= f.file_field :image, class: "form-control"
+				= f.hidden_field :image_cache
+			- if form_model.image?
+				.form-group
+					%label
+						= f.check_box :remove_image
+						Remove Image
+		.row
+			%div
+				= f.submit action.capitalize + " laboratory"
