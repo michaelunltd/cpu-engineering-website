@@ -20,6 +20,6 @@ class UserSessionsController < ApplicationController
 # TODO: I think when logged out, user should be sent to somewhere else
   def destroy
     logout
-    redirect_to(:users, notice: 'Logged out!')
+    redirect_to('/', notice: 'Logged out!')
   end
 end

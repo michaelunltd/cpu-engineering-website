@@ -18,4 +18,5 @@ class ApplicationController < ActionController::Base
   def save_current_url
     session[:return_to] = request.referer
   end
+
 end

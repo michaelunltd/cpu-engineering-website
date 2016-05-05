@@ -33,6 +33,10 @@ gem 'tinymce-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+end
 gem 'bootswatch-rails'
 
 gem 'sorcery'
@@ -59,3 +63,6 @@ end
 
 # For windows users to fix TZInfo::DataSourceNotFound error
 gem 'tzinfo-data'
+
+gem 'toastr-rails'
+gem 'bxslider-rails'

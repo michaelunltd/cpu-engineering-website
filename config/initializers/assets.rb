@@ -9,6 +9,9 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+
+Rails.application.config.assets.precompile += %w( bx_loader.gif controls.png )
 Rails.application.config.assets.precompile += %w( users.coffee )
 Rails.application.config.assets.precompile += %w( news.coffee )
 Rails.application.config.assets.precompile += %w( departments.coffee )
@@ -18,3 +21,4 @@ Rails.application.config.assets.precompile += %w( linkages.coffee )
 Rails.application.config.assets.precompile += %w( organizations.coffee )
 Rails.application.config.assets.precompile += %w( user_sessions.coffee )
 Rails.application.config.assets.precompile += %w( facilities.js )
+Rails.application.config.assets.precompile += %w( home.coffee )
