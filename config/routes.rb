@@ -12,11 +12,19 @@ Rails.application.routes.draw do
   get '/' => 'home#index', as: 'home'
 
   resources :news
+
   resources :events
-  resources :departments
+
+  resources :departments do
+    resources :researches
+  end
+
   resources :organizations
+
   resources :linkages
+
   resources :employees
+
   resources :laboratories
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

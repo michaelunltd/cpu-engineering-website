@@ -1,0 +1,38 @@
+
+
+.container
+  %h1= "#{@department.name} Researches"
+  .pull-right
+    = link_to new_department_research_path(@department.id) do
+      %button.btn.btn-success.btn-sm{:role=> "button"}
+        %i.glyphicon.glyphicon-plus
+          Research
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Summary
+        %th Group Name
+        %th Attachment Download
+        %th Edit
+        %th Delete
+
+
+    %tbody
+    - @researches.each do |research|
+      %tr
+        %td= research.title
+        %td= raw research.summary
+        %td= research.group_name
+        %td= link_to "Download Attachment", research.attachment_url
+        %td
+          = link_to edit_department_research_path(@department.id, research) do
+            %button.btn.btn-success.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-edit
+              Edit Research
+        %td
+          = link_to department_research_path(department_id: research.department_id, id: research.id), method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+            %button.btn.btn-danger.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-trash
+                Delete
