@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#home'
+
   resources :user_sessions
   resources :users
 
