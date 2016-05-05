@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/' => 'home#index', as: 'home'
 
+  get '/researches' => 'researches#show_all', as: "show_all_researches"
   resources :news
 
   resources :events

@@ -1,5 +1,10 @@
 class ResearchesController < ApplicationController
+  load_and_authorize_resource
   before_action :find_research, only: [:show, :edit, :destroy, :update]
+
+  def show_all
+    @researches = Research.all
+  end
 
   def show
   end
