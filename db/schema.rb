@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160505055938) do
 
+
   create_table "departments", force: :cascade do |t|
     t.string   "name"
     t.text     "about"
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160505055938) do
   create_table "news", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "img_path"
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -94,6 +96,18 @@ ActiveRecord::Schema.define(version: 20160505055938) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "researches", force: :cascade do |t|
+    t.string   "title"
+    t.text     "summary"
+    t.string   "group_name"
+    t.string   "attachment"
+    t.integer  "department_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "researches", ["department_id"], name: "index_researches_on_department_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",         null: false

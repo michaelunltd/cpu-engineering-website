@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(
-  username: 'admin',
-  password: 'password',
-  password_confirmation: 'password',
-  role: 'Admin'
+  username: "tantantan",
+  password: "password",
+  password_confirmation: "password",
+  role: "Admin",
 )
