@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160504022311) do
 
   create_table "departments", force: :cascade do |t|
@@ -43,13 +42,13 @@ ActiveRecord::Schema.define(version: 20160504022311) do
     t.text     "description"
     t.string   "venue"
     t.string   "image"
-    t.datetime "startDate"
-    t.datetime "endDate"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "laboratories", force: :cascade do |t|
+  create_table "facilities", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "image"
