@@ -17,6 +17,9 @@
         = f.label :description
         = f.text_field :description, class: "form-control"
       .form-group
+        = f.label :department
+        = f.collection_select :department_id, Department.all, :id, :name
+      .form-group
         = image_tag(form_model.image.thumb.url) if form_model.image?
         = f.label :image
         = f.file_field :image, class: "form-control"

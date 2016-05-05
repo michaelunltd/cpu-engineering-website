@@ -18,6 +18,7 @@
         %th Mission
         %th History
         %th Logo
+        %th Employees
         %th Edit
         %th Delete
 
@@ -31,6 +32,14 @@
         %td= raw department.mission
         %td= raw department.history
         %td= image_tag(department.logo.thumb.url)
+        %td
+          -department.employees.each do |employee|
+            %ul
+              %li= employee.name
+        %td
+          -department.linkages.each do |linkage|
+            %ul
+              %li= linkage.name   
         %td
           = link_to edit_department_path(department) do
             %button.btn.btn-success.btn-sm{:role=>"button"}

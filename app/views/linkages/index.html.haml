@@ -11,6 +11,7 @@
       %tr
         %th Name
         %th Description
+        %th Department
         %th Image
         %th Edit
         %th Delete
@@ -20,6 +21,7 @@
       %tr
         %td= linkage.name
         %td= linkage.description
+        %td= linkage.department.name
         %td= image_tag(linkage.image.thumb.url)
         %td
           = link_to edit_linkage_path(linkage) do

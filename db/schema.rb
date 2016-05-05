@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20160505055938) do
     t.string   "middle_name"
     t.string   "last_name"
     t.string   "photo"
-    t.string   "position"
     t.string   "honorifics"
     t.text     "counseling_hours"
     t.integer  "department_id"
@@ -63,9 +62,12 @@ ActiveRecord::Schema.define(version: 20160505055938) do
     t.string   "name"
     t.string   "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "department_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "linkages", ["department_id"], name: "index_linkages_on_department_id"
 
   create_table "news", force: :cascade do |t|
     t.string   "title"

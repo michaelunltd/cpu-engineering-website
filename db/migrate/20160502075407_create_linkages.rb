@@ -4,6 +4,7 @@ class CreateLinkages < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :image
+      t.belongs_to :department, index:true
       t.timestamps null: false
     end
   end
