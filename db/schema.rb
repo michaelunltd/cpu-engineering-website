@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504022311) do
+ActiveRecord::Schema.define(version: 20160505065819) do
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "actable_id"
+    t.string   "actable_type"
+    t.string   "title"
+    t.string   "image"
+    t.string   "content"
+    t.boolean  "featured",     default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -38,14 +49,11 @@ ActiveRecord::Schema.define(version: 20160504022311) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
     t.string   "venue"
-    t.string   "image"
     t.datetime "startDate"
     t.datetime "endDate"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "laboratories", force: :cascade do |t|
@@ -65,12 +73,9 @@ ActiveRecord::Schema.define(version: 20160504022311) do
   end
 
   create_table "news", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "image"
   end
 
   create_table "organizations", force: :cascade do |t|

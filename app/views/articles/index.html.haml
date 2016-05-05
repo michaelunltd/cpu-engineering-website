@@ -1,0 +1,26 @@
+.container
+  %h1 Article#index
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Image
+        %th Content
+        %th Featured
+
+    %tbody
+    - @articles.each do |article|
+      %tr
+        %td
+          = article.title
+          = link_to toggle_featured_path(article) do
+            %button.btn.btn-sm{role: 'button'}
+              %i.glyphicon.glyphicon-star
+              - if article.featured
+                UnFeature
+              - else
+                Feature
+        %td= image_tag(article.image.thumb.url) if article.image?
+        %td= raw article.content
+        %th= article.featured ? 'Yes' : 'No'

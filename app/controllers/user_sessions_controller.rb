@@ -8,9 +8,10 @@ class UserSessionsController < ApplicationController
     end
   end
 
+  # TODO: logging in doesnt redirect you back to where you came from
   def create
     if @user = login(params[:username], params[:password])
-      redirect_back_or_to(:users, notice: 'Login successful')
+      redirect_to(:users, notice: 'Login successful')
     else
       flash[:alert] = 'Login failed'
       render :new
