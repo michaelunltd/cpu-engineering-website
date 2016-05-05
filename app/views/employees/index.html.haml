@@ -11,9 +11,9 @@
       %tr
         %th Photo
         %th Name
-        %th Position
         %th Honorifics
         %th Counseling Hours
+        %th Department
         %th Edit
         %th Delete
 
@@ -22,16 +22,16 @@
       %tr
         %td= image_tag(employee.photo.thumb.url)
         %td= employee.name
-        %td= employee.position
         %td= employee.honorifics
         %td= raw employee.counseling_hours
+        %td= employee.department.name
         %td
           = link_to edit_employee_path(employee) do
             %button.btn.btn-success.btn-sm{:role=>"button"}
               %i.glyphicon.glyphicon-edit
               Edit Employee
         %td
-          = link_to employee, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+          = link_to employee, method: :delete, data: {confirm: 'Do you want to delete this employee?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
             %button.btn.btn-danger.btn-sm{:role=>"button"}
               %i.glyphicon.glyphicon-trash
                 Delete

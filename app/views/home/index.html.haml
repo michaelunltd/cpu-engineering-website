@@ -1,7 +1,13 @@
+-# TODO dapat pwede kaubra ang user carousel,
+-# either mapili sya events/news or maubra sya custom(upload pic kg butangan caption)
+
 %ul.bxslider
-  %li= image_tag('/uploads/department/logo/2/12932784_1082420805154861_7469630968358105915_n.jpg')
-  %li= image_tag('/uploads/news/image/4/_MG_2281.jpg')
-
-
--# TODO dapat pwede kaubra ang user carousel, 
-  -# either mapili sya events/news or maubra sya custom(upload pic kg butangan caption)
+	- @articles.each do |article|
+		- a = article.specific
+		%li
+			- if a.is_a? News
+				= link_to news_path(a) do
+					= image_tag(article.image.url, width: '30%', title: a.content)
+			- elsif a.is_a? Event
+				= link_to event_path(a) do
+					= image_tag(article.image.url, width: '30%', title: a.content)

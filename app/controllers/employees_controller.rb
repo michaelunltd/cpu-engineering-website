@@ -19,7 +19,7 @@ class EmployeesController < ApplicationController
     if @employee.save
       redirect_to employees_path
     else
-      flash[:notice] = "Employee WAS NOT added"
+      flash[:notice] = "Employee was not added"
       render :new
     end
   end
@@ -53,7 +53,7 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:first_name,:middle_name, :last_name, :photo, :photo_cache, :position, :honorifics,:counseling_hours)
+    params.require(:employee).permit(:first_name,:middle_name, :last_name, :photo, :photo_cache, :position, :honorifics, :counseling_hours, :department_id)
   end
 
 end

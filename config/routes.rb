@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root 'home#home'
-
   resources :user_sessions
   resources :users
 
@@ -9,14 +7,27 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get '/' => 'home#index', as: 'home'
+  root 'home#index', as: 'home'
+  get 'articles/index', as: 'articles'
+  get 'articles/:id/toggle_featured' => 'articles#toggle_featured', as: 'toggle_featured'
 
+  get '/researches' => 'researches#show_all', as: "show_all_researches"
   resources :news
+
   resources :events
-  resources :departments
+
+  resources :departments do
+    resources :researches
+  end
+
   resources :organizations
+
   resources :linkages
+
   resources :employees
+  resources :facilities
+  resources :outreach_programs
+
   resources :laboratories
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
