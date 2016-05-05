@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  load_and_authorize_resource
   before_action :find_employee, only: [:show, :edit, :destroy, :update]
 
   def show

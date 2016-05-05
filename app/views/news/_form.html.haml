@@ -1,3 +1,5 @@
+-# TODO: Make image better placed in the form.
+-# TODO: To copy file preview code to the rest of the _forms with file uploads
 = form_for form_model, url: {action: action} do |f|
   - if form_model.errors.any?
     %div
@@ -7,7 +9,6 @@
       %ul
         - form_model.errors.full_messages.each do |message|
           %li= message
-
   .container
     .row
       .form-group
@@ -33,19 +34,3 @@
     .row
       %div
         = f.submit action.capitalize + " News"
-
-:javascript
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        $('#img_prev')
-          .attr('src', e.target.result)
-          .width(200)
-          .height(200);
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  }

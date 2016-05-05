@@ -1,0 +1,31 @@
+= form_for form_model, url: {action: action} do |f|
+  - if form_model.errors.any?
+    %div
+      %h2
+        = pluralize(form_model.errors.count, 'error')
+        prohibited this news from being saved:
+      %ul
+        - form_model.errors.full_messages.each do |message|
+          %li= message
+  .container
+    .row#form_body
+      .form-group
+        = f.label :username
+        = f.text_field :username, class: 'form-control'
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control'
+      .form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: 'form-control'
+      .form-group
+        = f.label :role
+        = f.radio_button :role, 'Admin', checked: 'checked'
+        = f.label 'Admin'
+        = f.radio_button :role, 'Department Head'
+        = f.label 'Department Head'
+      .form-group#department_form
+        = f.label :department
+        = f.select :department_id, @departments.collect {|department| [department.name, department.id]}
+    .row
+      %div= f.submit 'Submit'

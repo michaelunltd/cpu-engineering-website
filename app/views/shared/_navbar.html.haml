@@ -37,21 +37,10 @@
           %input.form-control{:placeholder => "Search", :type => "text"}
         %button.btn.btn-default{:type => "submit"} Submit
       %ul.nav.navbar-nav.navbar-right
-        %li
-          %a{:href => "#"} Link
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            Dropdown
-            %span.caret
-          %ul.dropdown-menu{:role => "menu"}
-            %li
-              %a{:href => "#"} Action
-            %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
-            %li.divider
-            %li
-              %a{:href => "#"} Separated link
+        - if logged_in?
+          %li.navbar-brand= "Logged in as #{current_user.username}"
+          %li= link_to 'Logout', logout_path, method: :post
+        - else
+          %li= link_to 'Login', :login
     / /.navbar-collapse
   / /.container-fluid
