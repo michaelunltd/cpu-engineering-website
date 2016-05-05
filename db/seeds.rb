@@ -6,17 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-News.create(
-  title: "Lorem Ipsum",
-  content: "EASSSDSDWEWEWMIEMIEWME",
-  image: "/img/shit/la",
-  author: "Mr Right",
-)
-
-News.create(
-  title: "Ipsum Lorem",
-  content: "Hadahshwuuhuhuh",
-  image: "/img/shit/la/ba",
-  author: "Mr Right2",
+User.create(
+  username: "tantantan",
+  password: "password",
+  password_confirmation: "password",
+  role: "Admin",
 )

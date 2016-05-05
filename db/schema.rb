@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20160503230613) do
     t.text     "description"
     t.string   "venue"
     t.string   "image"
-    t.datetime "startDate"
-    t.datetime "endDate"
+    t.date     "startDate"
+    t.date     "endDate"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160503230613) do
   create_table "news", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "img_path"
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
