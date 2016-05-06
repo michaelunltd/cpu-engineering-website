@@ -26,6 +26,7 @@
             %li= link_to 'Articles', articles_path
             %li= link_to 'Departments', departments_path
             %li= link_to 'Researches', show_all_researches_path
+            %li= link_to 'Employees', employees_path
       %ul.nav.navbar-nav.navbar-right
         - if logged_in?
           %li.navbar-brand= "Logged in as #{current_user.username}"

@@ -16,11 +16,10 @@ class ResearchesController < ApplicationController
 
   def new
     @research = Research.new
-    @research.department_id = params[:department_id]
   end
 
   def create
-    @research = Research.new(research_params)
+    @research = Research.new(research_params.merge(:department_id => params[:department_id]))
 
     if @research.save
       redirect_to department_researches_path(params[:department_id])
@@ -53,7 +52,7 @@ class ResearchesController < ApplicationController
   private
 
   def research_params
-    params.require(:research).permit(:title, :summary, :group_name, :attachment, :department_id)
+    params.require(:research).permit(:title, :summary, :group_name, :attachment)
   end
 
   def find_research
