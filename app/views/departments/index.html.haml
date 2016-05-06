@@ -20,8 +20,6 @@
         %th Logo
         %th Employees
         %th Linkages
-        %th Edit
-        %th Delete
         %th Manage
 
     %tbody
@@ -42,16 +40,6 @@
           -department.linkages.each do |linkage|
             %ul
               %li= linkage.name
-        -# %td
-        -#   = link_to edit_department_path(department) do
-        -#     %button.btn.btn-success.btn-sm{:role=>"button"}
-        -#       %i.glyphicon.glyphicon-edit
-        -#       Edit Department
-        -# %td
-        -#   = link_to department, method: :delete, data: {confirm: 'Do you want to delete this department?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
-        -#     %button.btn.btn-danger.btn-sm{:role=>"button"}
-        -#       %i.glyphicon.glyphicon-trash
-        -#         Delete
         %td
           %ul
             %li{:style => "padding:2px"}

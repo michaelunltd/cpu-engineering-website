@@ -18,7 +18,7 @@
     - @users.each do |n|
       %tr
         %td= n.username
-        %td= n.department ? n.department : 'N/A'
+        %td= n.department ? n.department.name : 'N/A'
         %td= n.role
         %td
           = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
