@@ -20,13 +20,6 @@
 //= require bootstrap-datetimepicker
 //= require tinymce
 
-$(document).ready(function() {
-    $('.bxslider').bxSlider({
-        mode: 'fade',
-        captions: true
-    });
-});
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
