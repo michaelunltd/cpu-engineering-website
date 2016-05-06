@@ -3,8 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 slider = $(".bxslider").bxSlider({
-	mode: 'horizontal'
-	autoControls: true
-	captions: true
-	adaptiveHeight: true
+	autoControls: true,
+	captions: true,
+	adaptiveHeight: true,
+	slideWidth: 635
 })

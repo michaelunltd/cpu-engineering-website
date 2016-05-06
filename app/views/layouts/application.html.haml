@@ -11,9 +11,6 @@
   = render "shared/toastr"
   = render "shared/navbar"
   .container-fluid
-    .row
-      .col-md-10.col-md-offset-1.main
-        .row
-          = yield
+    = yield
   = render "shared/footer"
   = javascript_include_tag params[:controller], 'data-turbolinks-track' => true

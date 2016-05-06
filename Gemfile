@@ -68,3 +68,4 @@ gem 'tzinfo-data'
 
 gem 'toastr-rails'
 gem 'bxslider-rails'
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
