@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
   end
 
   def index
-    @employees = Employee.all
+    @employees = Employee.includes(:department)
   end
 
   def new
