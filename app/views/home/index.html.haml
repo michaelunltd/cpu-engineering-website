@@ -2,14 +2,14 @@
 -# either mapili sya events/news or maubra sya custom(upload pic kg butangan caption)
 -# TODO make images height equal
 -# TODO make the title text look better. D:
-
-%ul.bxslider
-	- @articles.each do |article|
-		- a = article.specific
-		%li
-			- if a.is_a? News
-				= link_to news_path(a) do
-					= image_tag(article.image.url, width: '30%', title: a.content)
-			- elsif a.is_a? Event
-				= link_to event_path(a) do
-					= image_tag(article.image.url, width: '30%', title: a.content)
+- if @articles
+	%ul.bxslider
+		- @articles.each do |article|
+			- a = article.specific
+			%li
+				- if a.is_a? News
+					= link_to news_path(a) do
+						= image_tag(article.image.url, width: '30%', title: a.content)
+				- elsif a.is_a? Event
+					= link_to event_path(a) do
+						= image_tag(article.image.url, width: '30%', title: a.content)
