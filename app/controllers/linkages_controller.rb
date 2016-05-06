@@ -3,7 +3,7 @@ class LinkagesController < ApplicationController
   before_action :find_linkage, only: [:show, :edit, :destroy, :update]
 
   def index
-    @linkages = Linkage.all
+    @linkages = Linkage.includes(:department)
   end
 
   def show
