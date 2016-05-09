@@ -12,12 +12,14 @@ Rails.application.routes.draw do
   get 'articles/:id/toggle_featured' => 'articles#toggle_featured', as: 'toggle_featured'
 
   get '/researches' => 'researches#show_all', as: "show_all_researches"
+  get '/curriculums'=> 'curriculums#show_all', as: "show_all_curriculums"
   resources :news
 
   resources :events
 
   resources :departments do
     resources :researches
+    resources :curriculums
   end
 
   resources :organizations

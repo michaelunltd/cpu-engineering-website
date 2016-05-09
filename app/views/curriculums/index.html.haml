@@ -1,0 +1,38 @@
+
+
+.container
+  %h1= "#{@department.name} Curriculum"
+  .pull-right
+    = link_to new_department_curriculum_path(@department.id) do
+      %button.btn.btn-success.btn-sm{:role=> "button"}
+        %i.glyphicon.glyphicon-plus
+          Curriculum
+    = link_to show_all_curriculums_path do
+      %button.btn.btn-info.btn-sm{:role=> "button"}
+        Show All
+
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Curriculum
+        %th Attachment Download
+        %th Edit
+        %th Delete
+
+
+    %tbody
+    - @curriculums.each do |curriculum|
+      %tr
+        %td= curriculum.name
+        %td= link_to "Download Curriculum", curriculum.attachment_url
+        %td
+          = link_to edit_department_curriculum_path(@department.id, curriculum) do
+            %button.btn.btn-success.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-edit
+              Edit Research
+        %td
+          = link_to department_curriculum_path(department_id: curriculum.department_id, id: curriculum.id), method: :delete, data: {confirm: 'Do you want to delete this Curriculum?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+            %button.btn.btn-danger.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-trash
+                Delete

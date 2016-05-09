@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505065819) do
+ActiveRecord::Schema.define(version: 20160509062959) do
 
   create_table "articles", force: :cascade do |t|
     t.integer  "actable_id"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20160505065819) do
     t.boolean  "featured",     default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "curriculums", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.integer  "department_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "departments", force: :cascade do |t|

@@ -1,0 +1,16 @@
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Curriculum
+        %th Deparment
+        %th Attachment Download
+
+
+
+    %tbody
+    - @curriculums.each do |curriculum|
+      %tr
+        %td= curriculum.name
+        %td= curriculum.department.name
+        %td= link_to "Download Curriculum", curriculum.attachment_url

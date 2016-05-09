@@ -1,0 +1,28 @@
+= form_for form_model, url: {action: action} do |f|
+  - if form_model.errors.any?
+    %div
+      %h2
+        = pluralize(form_model.errors.count, 'error')
+        prohibited this news from being saved:
+      %ul
+        - form_model.errors.full_messages.each do |message|
+          %li= message
+  .container
+    .row
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label :attachment
+        = f.file_field :attachment, class: "form-control"
+      - if form_model.attachment?
+        .form-group
+          %label
+            = f.check_box :remove_attachment
+            Remove Attachment
+      -# .form-group
+      -#   = f.label :department_id
+      -#   = f.text_field :department_id, class:"form-control"
+    .row
+      %div
+        = f.submit action.capitalize + " Curriculum"

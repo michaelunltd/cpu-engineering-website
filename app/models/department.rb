@@ -3,4 +3,5 @@ class Department < ActiveRecord::Base
   has_many :employees
   has_many :linkages
   has_many :researches
+  has_many :curriculums
 end
