@@ -1,0 +1,37 @@
+.container
+  %h1 Graduate#index
+  .pull-right
+    = link_to new_graduate_path do
+      %button.btn.btn-success.btn-sm{:role=> "button"}
+        %i.glyphicon.glyphicon-plus
+          Graduate
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Photo
+        %th Name
+        %th Department
+        %th Year Graduated
+        %th Awards
+        %th Edit
+        %th Delete
+
+    %tbody
+    - @graduates.each do |graduate|
+      %tr
+        %td= image_tag(graduate.photo.thumb.url)
+        %td= graduate.name
+        %td= graduate.department ? graduate.department.name : 'Department not assigned'
+        %td= graduate.year_graduated
+        %td= raw graduate.awards
+        %td
+          = link_to edit_graduate_path(graduate) do
+            %button.btn.btn-success.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-edit
+              Edit Graduate
+        %td
+          = link_to graduate, method: :delete, data: {confirm: 'Do you want to delete this graduate?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+            %button.btn.btn-danger.btn-sm{:role=>"button"}
+              %i.glyphicon.glyphicon-trash
+                Delete

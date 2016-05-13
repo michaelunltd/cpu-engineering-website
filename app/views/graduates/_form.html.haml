@@ -1,0 +1,44 @@
+= form_for form_model, url: {action: action} do |f|
+  - if form_model.errors.any?
+    %div
+      %h2
+        = pluralize(form_model.errors.count, 'error')
+        prohibited this news from being saved:
+      %ul
+        - form_model.errors.full_messages.each do |message|
+          %li= message
+
+  .container
+    .row
+      .form-group
+        = f.label :first_name
+        = f.text_field :first_name, class: "form-control"
+      .form-group
+        = f.label :middle_name
+        = f.text_field :middle_name, class: "form-control"
+      .form-group
+        = f.label :last_name
+        = f.text_field :last_name , class: "form-control"
+      .form-group
+        = image_tag(form_model.photo.thumb.url) if form_model.photo?
+        = f.label :photo
+        = f.file_field :photo, class: "form-control"
+        = f.hidden_field :photo_cache
+      - if form_model.photo?
+        .form-group
+          %label
+            = f.check_box :remove_photo
+            Remove photo
+      .form-group
+        = f.label :year_graduated
+        = f.text_field :year_graduated , class: "form-control"
+      .form-group
+        = f.label :awards
+        = f.text_area :awards , class: "tinymce"
+        = tinymce
+      .form-group
+        = f.label :department
+        = f.collection_select :department_id, Department.all, :id, :name
+    .row
+      %div
+        = f.submit action.capitalize + " Graduate"

@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :employees
   resources :facilities
   resources :outreach_programs
-
+  resources :graduates
   resources :laboratories
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
