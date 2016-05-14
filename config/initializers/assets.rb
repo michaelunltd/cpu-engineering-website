@@ -11,7 +11,9 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 
+
 Rails.application.config.assets.precompile += %w( bx_loader.gif controls.png )
+
 Rails.application.config.assets.precompile += %w( users.coffee )
 Rails.application.config.assets.precompile += %w( news.coffee )
 Rails.application.config.assets.precompile += %w( departments.coffee )
@@ -20,6 +22,7 @@ Rails.application.config.assets.precompile += %w( employees.coffee )
 Rails.application.config.assets.precompile += %w( linkages.coffee )
 Rails.application.config.assets.precompile += %w( organizations.coffee )
 Rails.application.config.assets.precompile += %w( user_sessions.coffee )
+
 Rails.application.config.assets.precompile += %w( facilities.js )
 Rails.application.config.assets.precompile += %w( home.coffee )
 Rails.application.config.assets.precompile += %w( articles.js )

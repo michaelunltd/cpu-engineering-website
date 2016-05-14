@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
-
 gem 'haml-rails'
 
 gem 'mini_magick'
@@ -69,3 +68,4 @@ gem 'tzinfo-data'
 gem 'toastr-rails'
 gem 'bxslider-rails'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem 'bootstrap-autohidingnavbar-rails'

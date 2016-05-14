@@ -26,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :carousel do
-    process resize_to_fill: [635,250]
+    process resize_to_fill: [1000,500]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

@@ -20,6 +20,7 @@
 //= require bootstrap-datetimepicker
 //= require tinymce
 //= require data-confirm-modal
+//= require jquery.bootstrap-autohidingnavbar
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -43,3 +44,9 @@ toastr.options = {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
 };
+
+$(document).ready(function() {
+  $(".navbar-fixed-top").autoHidingNavbar({
+      'hideOffset' :  $('.header-img').height() - 50
+  });
+});
