@@ -13,6 +13,13 @@ Rails.application.routes.draw do
 
   get '/researches' => 'researches#show_all', as: "show_all_researches"
   get '/curriculums'=> 'curriculums#show_all', as: "show_all_curriculums"
+
+  get '/academic_programs' => 'departments#index', as: "academic_programs"
+  get '/about_engineering' => 'departments#index', as: "about_engineering"
+  get '/student_life' => 'departments#index', as: "student_life"
+  get '/study_in_cpu' => 'departments#index', as: "study_in_cpu"
+
+
   resources :news
 
   resources :events

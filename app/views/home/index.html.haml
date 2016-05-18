@@ -6,11 +6,13 @@
 
 
 -# IMAGES SHOULD BE AT MOST 635x250 px in height
-.header-img
-	%img.img-responsive.header-img{:alt => "Logo", :src => "/statics/engilogo.png"}
+.row
+	.col-md-6.col-md-offset-1
+		.header-img
+			%img.img-responsive.header-img{:alt => "Logo", :src => "/statics/engilogo.png"}
 .row.row-offcanvas.row-offcanvas-left
 	= render "shared/sidebar"
-	.col-sm-8.col-md-9.main.home-content
+	.col-sm-9.col-md-10.main.home-content
 		%p.visible-xs
 			%button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", :type => "button"}
 				%i.glyphicon.glyphicon-chevron-left

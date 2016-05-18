@@ -1,1 +1,30 @@
-#sidebar.col-sm-4.col-md-3.sidebar-offcanvas{:role => "navigation"}
+#sidebar.col-sm-3.col-md-2.sidebar-offcanvas{:role => "navigation"}
+  %ul#sidebar.nav.nav-pills.nav-stacked.pull-right{:style => "max-width: 200px;"}
+    %li
+      = link_to academic_programs_path do
+        %span.glyphicon.glyphicon-off
+        = "Academic Programs"
+    %li
+      = link_to about_engineering_path do
+        %span.glyphicon.glyphicon-user
+        = "About Engineering"
+    %li
+      = link_to student_life_path do
+        %span.glyphicon.glyphicon-lock
+        = "Student Life"
+    %li
+      = link_to study_in_cpu_path do
+        %span.glyphicon.glyphicon-envelope
+        = "Study In CPU"
+    %li
+      = link_to news_index_path do
+        %span.glyphicon.glyphicon-list
+        = "News"
+    %li
+      = link_to events_path do
+        %span.glyphicon.glyphicon-signal
+        = "Events"
+    %li
+      = link_to news_index_path do
+        %span.glyphicon.glyphicon-earphone
+        = "Contact Us (no page yet)"
