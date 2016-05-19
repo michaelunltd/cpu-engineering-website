@@ -12,3 +12,12 @@ User.create(
   password_confirmation: "password",
   role: "Admin",
 )
+
+Department.create(
+  name: "Chemical Engineering",
+  about: "",
+  message: "",
+  vision: "",
+  mission: "",
+  history: "",
+)
