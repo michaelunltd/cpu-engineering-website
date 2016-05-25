@@ -15,9 +15,10 @@ Rails.application.routes.draw do
   get '/curriculums'=> 'curriculums#show_all', as: "show_all_curriculums"
 
   get '/academic_programs' => 'departments#index', as: "academic_programs"
-  get '/about_engineering' => 'departments#index', as: "about_engineering"
-  get '/student_life' => 'departments#index', as: "student_life"
-  get '/study_in_cpu' => 'departments#index', as: "study_in_cpu"
+  get '/about_engineering' => 'static_pages#about_engineering', as: "about_engineering"
+  get '/student_life' => 'static_pages#student_life', as: "student_life"
+  get '/study_in_cpu' => 'static_pages#study_in_cpu', as: "study_in_cpu"
+  get '/contact_us' => 'static_pages#contact_us', as: "contact_us"
 
 
   resources :news
