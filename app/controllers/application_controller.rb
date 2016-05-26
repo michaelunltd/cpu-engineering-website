@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :save_current_url
+  before_filter :set_departments
 
   rescue_from CanCan::AccessDenied do |_exception|
     flash[:alert] = 'You are unauthorized!'
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def save_current_url
     session[:return_to] = request.referer
+  end
+
+  def set_departments
+    @departments = Department.all().order(:name)
   end
 
 end

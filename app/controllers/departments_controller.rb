@@ -3,7 +3,7 @@ load_and_authorize_resource
 before_action :find_department, only: [:show, :edit, :destroy, :update]
 
   def index
-    @departments = Department.includes(:employees,:linkages)
+    @departments = Department.includes(:employees,:linkages).order(:name)
   end
 
   def show
