@@ -11,6 +11,8 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 
+Rails.application.config.assets.precompile += %w( jquery.easing.min.js )
+Rails.application.config.assets.precompile += %w( scrolling-nav.js )
 
 Rails.application.config.assets.precompile += %w( bx_loader.gif controls.png )
 
