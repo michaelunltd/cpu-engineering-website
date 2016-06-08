@@ -15,6 +15,7 @@
         %th Venue
         %th Start Date
         %th End Date
+        %th Status
 
     %tbody
     - @events.each do |event|
@@ -25,6 +26,15 @@
         %td= event.venue
         %td= event.start_date
         %td= event.end_date
+        %td
+          %ul
+            %li
+              Upcoming: #{event.isUpcoming?}
+            %li
+              Ongoing: #{event.isOngoing?}
+            %li
+              Ended: #{event.hasEnded?}
+
         %td
           = link_to edit_event_path(event) do
             %button.btn.btn-success.btn-sm{:role=>"button"}
