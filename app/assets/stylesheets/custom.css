@@ -102,28 +102,28 @@ footer {
 /*THIS IS FOR SCROLLSPY STATIC PAGES*/
 .deans-welome-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #fff;
 }
 
 .history-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #eee;
 }
 
 .mission-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #fff;
 }
 
 .vision-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #eee;
 }
