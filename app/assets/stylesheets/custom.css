@@ -50,7 +50,7 @@ footer {
  * --------------------------------------------------
  */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .row-offcanvas {
         position: relative;
         -webkit-transition: all 0.25s ease-out;
@@ -68,7 +68,6 @@ footer {
         position: absolute;
         top: 0;
         width: 33%;
-        margin-left: 10px;
     }
 }
 
