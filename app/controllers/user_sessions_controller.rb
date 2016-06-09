@@ -2,7 +2,7 @@ class UserSessionsController < ApplicationController
   def new
     if logged_in?
       flash[:notice] = 'You are already logged in'
-      redirect_to session.delete(:return_to)
+      redirect_to :back
     else
       @user = User.new
     end

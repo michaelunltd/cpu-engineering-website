@@ -1,6 +1,14 @@
 class Event < ActiveRecord::Base
 	acts_as :article
 
+  validate :start_date_cannot_be_in_the_past
+
+  def start_date_cannot_be_in_the_past
+    if start_date < DateTime.now()
+      errors.add(:start_date, "can't be in the past")
+    end
+  end
+
 	def isUpcoming?
 		@startTime = DateTime.parse(start_date.to_s)
 		@now = DateTime.now
@@ -22,6 +30,5 @@ class Event < ActiveRecord::Base
 
 		return @now > @endTime
 	end
-
 
 end

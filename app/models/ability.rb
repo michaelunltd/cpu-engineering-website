@@ -6,9 +6,15 @@ class Ability
 
     if user.role == 'Admin'
       can :manage, :all
+    elsif user.role == 'Department Head'
+      can [:update, :create], Department, :id => user.department.id
+      can :read, :all
     else
       can :read, :all
     end
+
+# TODO dept admin can only edit their dept info DONE
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
