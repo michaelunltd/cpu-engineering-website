@@ -9,6 +9,7 @@ default:
     - textcolor
     - preview
     - autolink
+  file_picker_types: 'file image media'
   resize: false
   statusbar: false
   toolbar:

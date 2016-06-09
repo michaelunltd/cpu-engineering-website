@@ -50,7 +50,7 @@ footer {
  * --------------------------------------------------
  */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .row-offcanvas {
         position: relative;
         -webkit-transition: all 0.25s ease-out;
@@ -68,7 +68,6 @@ footer {
         position: absolute;
         top: 0;
         width: 33%;
-        margin-left: 10px;
     }
 }
 
@@ -102,28 +101,28 @@ footer {
 /*THIS IS FOR SCROLLSPY STATIC PAGES*/
 .deans-welome-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #fff;
 }
 
 .history-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #eee;
 }
 
 .mission-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #fff;
 }
 
 .vision-section {
     height: 100%;
-    padding-top: 100px;
+    padding: 2.5%;
     text-align: center;
     background: #eee;
 }
