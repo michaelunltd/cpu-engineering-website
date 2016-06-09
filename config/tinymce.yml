@@ -2,16 +2,15 @@ default:
   elementpath: false
   height: 500
   plugins:
-    - image
+    - uploadimage
     - link
     - autoresize
     - colorpicker
     - textcolor
     - preview
     - autolink
-  file_picker_types: 'file image media'
   resize: false
   statusbar: false
   toolbar:
-    - 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+    - 'undo redo | link uploadimage | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
     - 'forecolor backcolor | formatselect fontselect fontsizeselect | cut copy paste'

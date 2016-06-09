@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/study_in_cpu' => 'static_pages#study_in_cpu', as: "study_in_cpu"
   get '/contact_us' => 'static_pages#contact_us', as: "contact_us"
 
-
+  post '/tinymce_assets' => 'tinymce_assets#create'
   resources :news
 
   resources :events

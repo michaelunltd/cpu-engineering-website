@@ -17,7 +17,7 @@
       .form-group
         = f.label :content
         = f.text_area :content, size: "150", class: "tinymce"
-        = tinymce
+        = tinymce plugins: ["uploadimage"]
       .form-group
         = image_tag(form_model.image.thumb.url, id: 'img_prev')
         = f.label :image

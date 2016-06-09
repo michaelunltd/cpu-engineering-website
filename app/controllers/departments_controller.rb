@@ -7,6 +7,7 @@ before_action :find_department, only: [:show, :edit, :destroy, :update]
   end
 
   def show
+    @departments = Department.all
   end
 
   def new

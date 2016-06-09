@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519065855) do
+ActiveRecord::Schema.define(version: 20160608065143) do
 
   create_table "articles", force: :cascade do |t|
     t.integer  "actable_id"
@@ -87,6 +87,17 @@ ActiveRecord::Schema.define(version: 20160519065855) do
   end
 
   add_index "graduates", ["department_id"], name: "index_graduates_on_department_id"
+
+  create_table "images", force: :cascade do |t|
+    t.string   "alt",               default: ""
+    t.string   "hint",              default: ""
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "linkages", force: :cascade do |t|
     t.string   "name"

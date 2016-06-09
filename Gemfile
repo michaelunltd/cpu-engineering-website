@@ -30,6 +30,9 @@ gem 'mini_magick'
 
 gem 'tinymce-rails'
 
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+gem 'responders', '~> 2.0'
+gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'active_record-acts_as'

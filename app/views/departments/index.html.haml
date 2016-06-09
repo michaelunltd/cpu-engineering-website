@@ -49,6 +49,12 @@
                   Edit Department
 
             %li{:style => "padding:2px"}
+              = link_to department_path(department) do
+                %button.btn.btn-success.btn-sm{:role=>"button"}
+                  %i.glyphicon.glyphicon-edit
+                  Show Department
+
+            %li{:style => "padding:2px"}
               = link_to new_department_research_path(department) do
                 %button.btn.btn-success.btn-sm{:role=>"button"}
                   %i.glyphicon.glyphicon-plus
@@ -65,3 +71,38 @@
                 %button.btn.btn-danger.btn-sm{:role=>"button"}
                   %i.glyphicon.glyphicon-trash
                   Delete
+
+
+-# .row.row-offcanvas.row-offcanvas-left
+-#   #sidebar.col-sm-3.col-md-2.sidebar-offcanvas{:role => "navigation"}
+-#     %ul#sidebar.nav.nav-pills.nav-stacked.pull-right.fixed{:style => "max-width: 200px;"}
+-#       - @departments.each do |department|
+-#         %li
+-#           %a.page-scroll{:href => department.name}
+-#             %span.glyphicon.glyphicon-off
+-#             = department.name
+-#   .col-sm-9.col-md-10.main.home-content
+-#     %p.visible-xs.fixed
+-#       %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", :type => "button"}
+-#         %i.glyphicon.glyphicon-chevron-left
+-#     #main-content
+-#       - @departments.each do |department|
+-#         %section{:class => "#{department.name}-section", :id => department.name}
+-#           .container-fluid
+-#             .row
+-#               .col-sm-1.col-md-1
+-#               .col-sm-9.col-md-10
+-#                 .row
+-#                   .col-sm-3.col-md-3
+-#                   .col-sm-6.col-md-7
+-#                     -# %h1= image_tag(department.logo.thumb.url)
+-#                     %h1= department.name
+-#                     .row
+-#                       .col-sm-2.col-md-2
+-#                       .col-sm-8.col-md-9
+-#                         %h1= image_tag(department.logo.thumb.url)
+-#                 -# %h1= department.name
+-#                 %p= raw department.about
+-#                 %p= raw department.message
+-#                 %p= raw department.vision
+-#                 %p= raw department.mission
