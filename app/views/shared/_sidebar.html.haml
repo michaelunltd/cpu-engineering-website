@@ -1,9 +1,16 @@
 #sidebar.col-sm-2.col-md-2.sidebar-offcanvas{:role => "navigation"}
-  %ul#sidebar.nav.nav-pills.nav-stacked.pull-right{:style => "max-width: 200px;"}
+  %ul.nav.nav-sidebar.list-group.panel
     %li
-      = link_to academic_programs_path do
+      %a{"data-toggle" => "collapse", :href => "#depts"}
         %span.glyphicon.glyphicon-off
         = "Academic Programs"
+      #depts.panel-collapse.collapse
+        %ul.list-group
+          - @departments.each do |department|
+            %li.list-group-item
+              = link_to department_path(department) do
+                %span.glyphicon.glyphicon-chevron-right
+                = department.name
     %li
       = link_to about_engineering_path do
         %span.glyphicon.glyphicon-user
