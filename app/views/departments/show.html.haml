@@ -1,33 +1,30 @@
-
 .row.row-offcanvas.row-offcanvas-left
-  #sidebar.col-sm-3.col-md-2.sidebar-offcanvas{:role => "navigation"}
-    %ul#sidebar.nav.nav-pills.nav-stacked.pull-right.fixed{:style => "max-width: 200px;"}
+  #sidebar.col-sm-2.col-md-2.sidebar-offcanvas{:role => "navigation"}
+    %ul.nav.nav-sidebar.list-group.panel
       - @departments.each do |department|
-        %li
-          %a.page-scroll{:href => department_path(department.id)}
+        %li{:id => department.id}
+          %a{:href => department_path(department.id)}
             %span.glyphicon.glyphicon-off
             = department.name
-  .col-sm-9.col-md-10.main.home-content
-    %p.visible-xs.fixed
-      %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", :type => "button"}
+  .col-sm-12.col-md-10.main.content
+    %p.visible-xs.visible-sm
+      %button.btn.btn-primary.btn-md{"data-toggle" => "offcanvas", :type => "button"}
         %i.glyphicon.glyphicon-chevron-left
     #main-content
-      %section{:class => "#{@department.name}-section", :id => @department.name}
-        .container-fluid
-          .row
-            .col-sm-1.col-md-1
-            .col-sm-9.col-md-10
-              .row
-                .col-sm-3.col-md-3
-                .col-sm-6.col-md-7
-                  -# %h1= image_tag(department.logo.thumb.url)
-                  %h1= @department.name
-                  .row
-                    .col-sm-2.col-md-2
-                    .col-sm-8.col-md-9
-                      %h1= image_tag(@department.logo.thumb.url)
-              -# %h1= department.name
-              %p= raw @department.about
-              %p= raw @department.message
-              %p= raw @department.vision
-              %p= raw @department.mission
+      .container-fluid
+        .row
+          .col-sm-4.col-md-3
+          .col-sm-6.col-md-7
+            %h1= @department.name
+            .row
+              .col-sm-2.col-md-2
+              .col-sm-8.col-md-9
+                %h1= image_tag(@department.logo.thumb.url)
+        %p= raw @department.message
+        %p= raw @department.vision
+        %p= raw @department.mission
+:javascript
+  window.onload = setToActive();
+  function setToActive() {
+        $("##{@department.id}").addClass("active");
+  }

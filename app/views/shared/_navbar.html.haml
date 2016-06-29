@@ -12,14 +12,14 @@
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "/academic_programs"}
             = "Academic Programs"
-            %span-caret
+            %span.caret
           %ul.dropdown-menu{:role => "menu"}
             - @departments.each do |department|
               %li= link_to department.name, department_path(department)
         -# %li= link_to 'Academic Programs', departments_path
-        -# %li= link_to 'About Engineering', about_engineering_path
-        -# %li= link_to 'Student Life', student_life_path
-        -# %li= link_to 'Study In CPU', study_in_cpu_path
+        %li= link_to 'About Engineering', about_engineering_path
+        %li= link_to 'Student Life', student_life_path
+        %li= link_to 'Study In CPU', study_in_cpu_path
       %ul.nav.navbar-nav.navbar-right
         - if logged_in?
           %li.dropdown
