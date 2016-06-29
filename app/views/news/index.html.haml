@@ -21,7 +21,9 @@
       %tr
         %td= n.title
         %td= raw n.content
-        %td= image_tag(n.image.thumb.url)
+        -# %td= image_tag(n.image.thumb.url, size: "50")
+        %td
+          %img.img-circle{:src => n.image.thumb.url, :style=>"width:50px"}
         %td= n.author
         %td
           = link_to edit_news_path(n) do

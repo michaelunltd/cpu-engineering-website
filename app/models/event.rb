@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
 		@endTime = DateTime.parse(end_date.to_s)
 		@now = DateTime.now
 
-		return @startTime < @now && @now < @startTime
+		return @startTime < @now && @now < @endTime
 	end
 
 	def hasEnded?
@@ -29,6 +29,16 @@ class Event < ActiveRecord::Base
 		@now = DateTime.now
 
 		return @now > @endTime
+	end
+
+	def status
+		if self.isUpcoming?
+			return "Upcoming"
+		elsif self.isOngoing?
+			return "Ongoing"
+		elsif self.hasEnded?
+			return "Done"
+		end
 	end
 
 end
