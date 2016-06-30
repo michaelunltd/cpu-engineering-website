@@ -36,7 +36,10 @@
 						.panel.panel-primary
 							.panel-heading
 								%span.panel-title Latest News
-								%span.badge.pull-right 14
+								%span.pull-right
+									= link_to news_index_path do
+										%span{:style=> "font-size:10px;color:white"}
+											See all
 							.panel-body
 								- @news.each do |news|
 									.row
@@ -51,6 +54,9 @@
 										.col-md-12
 											.div-news-content{:style=> "color:gray"}
 												= raw news.content
+											.div-news-seemore.pull-right
+												= link_to news_path(news) do
+													%span{:style=> "color:gray;font-size:10px"}See more
 									%hr
 					.col-md-7
 						.panel.panel-primary
