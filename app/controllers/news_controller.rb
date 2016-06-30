@@ -4,6 +4,7 @@ class NewsController < ApplicationController
 
     def index
         @news = News.all
+        @latest = News.order(created_at: :desc).first(5)
     end
 
     def show
