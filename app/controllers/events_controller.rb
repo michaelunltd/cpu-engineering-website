@@ -14,8 +14,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		event_params[:start_date] = DateTime.parse(event_params[:start_date])
-		event_params[:end_date] = DateTime.parse(event_params[:end_date])
+		event_params[:start_date] = Time.parse(event_params[:start_date])
+		event_params[:end_date] = Time.parse(event_params[:end_date])
 		@event = Event.new(event_params)
 		if @event.save
 			redirect_to events_path
@@ -29,8 +29,8 @@ class EventsController < ApplicationController
 	end
 
 	def update
-		event_params[:start_date] = DateTime.parse(event_params[:start_date])
-		event_params[:end_date] = DateTime.parse(event_params[:end_date])
+		event_params[:start_date] = Time.parse(event_params[:start_date])
+		event_params[:end_date] = Time.parse(event_params[:end_date])
 		if @event.update(event_params)
 			redirect_to events_path
 		else
