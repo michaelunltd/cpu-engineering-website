@@ -62,7 +62,12 @@
 										.div-event-title{:style=> "color:#e9541f"}
 											= e.title
 											%span.pull-right
-												= e.status
+												- if e.upcoming?
+													= "Starting #{time_ago_in_words(Time.parse(e.start_date.to_s))} from now"
+												- elsif e.ongoing?
+													= "Ongoing"
+												-	else
+													= "Ended #{time_ago_in_words(Time.parse(e.end_date.to_s))} ago"
 										.div-event-venue{:style=> "color:grey;font-size:10px"}
 											%span.glyphicon.glyphicon-map-marker
 												= e.venue

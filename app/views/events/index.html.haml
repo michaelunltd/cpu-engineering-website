@@ -30,11 +30,11 @@
           -# = event.status
           %ul
             %li
-              Upcoming: #{event.isUpcoming?}
+              Upcoming: #{event.upcoming?}
             %li
-              Ongoing: #{event.isOngoing?}
+              Ongoing: #{event.ongoing?}
             %li
-              Ended: #{event.hasEnded?}
+              Ended: #{event.ended?}
 
         %td
           = link_to edit_event_path(event) do

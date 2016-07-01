@@ -4,41 +4,40 @@ class Event < ActiveRecord::Base
   validate :start_date_cannot_be_in_the_past
 
   def start_date_cannot_be_in_the_past
-    if start_date < Time.now()
+    if start_date < Time.now
       errors.add(:start_date, "can't be in the past")
     end
   end
 
-	def isUpcoming?
-		@startTime = Time.parse(start_date.to_s)
-		@now = Time.now
+	def upcoming?
+		startTime = Time.parse(start_date.to_s)
+		now = Time.now
 
-		return @now < @startTime
+		return now < startTime
 	end
 
-	def isOngoing?
-		@startTime = Time.parse(start_date.to_s)
-		@endTime = Time.parse(end_date.to_s)
-		@now = Time.now
+	def ongoing?
+		startTime = Time.parse(start_date.to_s)
+		endTime = Time.parse(end_date.to_s)
+		now = Time.now
 
-		return @startTime < @now && @now < @endTime
+		return startTime < now && now < endTime
 	end
 
-	def hasEnded?
-		@endTime = Time.parse(end_date.to_s)
-		@now = Time.now
+	def ended?
+		endTime = Time.parse(end_date.to_s)
+		now = Time.now
 
-		return @now > @endTime
+		return now > endTime
 	end
 
 	def status
-		if self.isUpcoming?
+		if upcoming?
 			return "Upcoming"
-		elsif self.isOngoing?
+		elsif ongoing?
 			return "Ongoing"
-		elsif self.hasEnded?
+		elsif ended?
 			return "Done"
 		end
 	end
-
 end
