@@ -9,19 +9,18 @@ html, body {
 body {
     padding-top: 70px;
 }
-footer {
-  border-top: solid #EEEEEE;
+.footer {
   border-width: thin;
-  height: 30%;
-  background-color: #772953;
-}
-.footer-text {
-  color: white;
-}
-
-.back-to-top-link {
+  border-top: thick solid #772953;
   margin-top: 2.5%;
 }
+#footer-content{
+  padding-top: 2.5%;
+}
+#footer-bottom {
+  padding-bottom: 2.5%;
+}
+
 
 #back-to-top:hover, #back-to-top:active, #back-to-top:visited {
   color: #FFF;
