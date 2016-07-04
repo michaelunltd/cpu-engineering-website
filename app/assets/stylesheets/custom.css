@@ -21,11 +21,6 @@ body {
   padding-bottom: 2.5%;
 }
 
-
-#back-to-top:hover, #back-to-top:active, #back-to-top:visited {
-  color: #FFF;
-}
-
 /*SLIDER*/
 .bx-viewport, .bx-wrapper {
     position: relative;
@@ -209,4 +204,9 @@ body {
 .card .card-action a:hover {
   color: #838383;
   text-decoration: none;
+}
+
+
+#back-to-top:hover {
+  background-color: #E95420;
 }
