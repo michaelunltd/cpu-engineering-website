@@ -6,6 +6,24 @@
         %i.glyphicon.glyphicon-plus
           Event
 
+  .row
+    .col-md-8
+      %ul.bxslider
+        - @events.each do |event|
+          %li
+            = link_to event_path(event) do
+              = image_tag(event.image.carousel.url, title: event.title)
+    .col-md-3
+      .calendar
+        = month_calendar events: @events do |date, events|
+          = date.day
+          - events.each do |event|
+            %div{:style=> "padding-bottom:2px;font-size:5px"}
+              = event.title
+              .pull-right{:style=> "color:white;font-size:4px;background-color:green;padding:2px"}
+                = event.status
+
+
   %table.table.table-striped
     %thead
       %tr

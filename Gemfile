@@ -30,6 +30,8 @@ gem 'mini_magick'
 
 gem 'tinymce-rails'
 
+gem "simple_calendar", "~> 2.0"
+
 gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 gem 'responders', '~> 2.0'
 gem 'paperclip'

@@ -1,11 +1,37 @@
 .container
-  %h1 News#index
+  %h1 News Archive
   .pull-right
     = link_to new_news_path do
       %button.btn.btn-success.btn-sm{:role=> "button"}
         %i.glyphicon.glyphicon-plus
           News
-
+  %ul.bxslider
+    - @latest.each do |n|
+      %li
+        = link_to news_path(n) do
+          = image_tag(n.image.carousel.url, title: n.content)
+  - @news.each do |n|
+    .col-md-4
+      .card
+        .card-image
+          %img.img-responsive{:src => n.image.carousel.url}
+          %span.card-title= n.title
+        .card-content
+          %p= raw n.content
+          %small{:style=> "color:gray"}
+            by: #{n.author} at #{n.created_at.to_formatted_s(:short)}
+        .card-action
+          = link_to news_path(n) do
+            %span.pull-right Read more
+    -# .row
+    -#   .col-md-3
+    -#     %img{:src => n.image.thumb.url, :style=>"width:120px, height:120px, position:inherit, float:left"}
+    -#   .col-md-3
+    -#     .row
+    -#       %h2= n.title
+    -#     .row
+    -#       %h3= raw n.content
+    -# %hr/
   %table.table.table-striped
     %thead
       %tr
@@ -15,13 +41,11 @@
         %th Author
         %th Edit
         %th Delete
-
     %tbody
     - @news.each do |n|
       %tr
         %td= n.title
         %td= raw n.content
-        -# %td= image_tag(n.image.thumb.url, size: "50")
         %td
           %img.img-circle{:src => n.image.thumb.url, :style=>"width:50px"}
         %td= n.author

@@ -223,6 +223,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.7.0)
+    simple_calendar (2.1.5)
+      rails (>= 3.0)
     slop (3.6.0)
     sorcery (0.9.1)
       bcrypt (~> 3.1)
@@ -290,6 +292,7 @@ DEPENDENCIES
   responders (~> 2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_calendar (~> 2.0)
   sorcery
   spring
   sqlite3

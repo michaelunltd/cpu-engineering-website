@@ -4,6 +4,12 @@ class EventsController < ApplicationController
 
 	def index
 		@events = Event.all
+		@timeNow = DateTime.now
+
+
+		puts "==========================="
+		puts @timeNow
+		puts "==========================="
 	end
 
 	def show
@@ -14,8 +20,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		event_params[:start_date] = DateTime.parse(event_params[:start_date])
-		event_params[:end_date] = DateTime.parse(event_params[:end_date])
+		event_params[:start_date] = Time.zone.parse(event_params[:start_date])
+		event_params[:end_date] = Time.zone.parse(event_params[:end_date])
 		@event = Event.new(event_params)
 		if @event.save
 			redirect_to events_path
