@@ -1,10 +1,11 @@
 .container
   %h1 News Archive
-  .pull-right
-    = link_to new_news_path do
-      %button.btn.btn-success.btn-sm{:role=> "button"}
-        %i.glyphicon.glyphicon-plus
-          News
+  .row
+    .pull-right
+      = link_to new_news_path do
+        %button.btn.btn-success.btn-sm{:role=> "button"}
+          %i.glyphicon.glyphicon-plus
+            News
   %ul.bxslider
     - @latest.each do |n|
       %li

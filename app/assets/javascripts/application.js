@@ -59,7 +59,13 @@ $(document).ready(function() {
     });
 });
 
-//jQuery for page scrolling feature - requires jQuery Easing plugin
+var loaded = function(){
+
+  $('body').scrollspy({ target: '#sidebar' });
+
+}
+$(document).on("page:load ready", loaded);
+
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);

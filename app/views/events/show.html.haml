@@ -1,0 +1,5 @@
+%h1= @event.title
+%img{:src => @event.image.carousel.url}
+%h2= raw @event.content
+%h6
+  Venue: #{@event.venue} Time: #{@event.start_date}

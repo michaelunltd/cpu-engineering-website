@@ -1,13 +1,14 @@
 .container
-  %h1 Event#index
-  .pull-right
-    = link_to new_event_path do
-      %button.btn.btn-success.btn-sm{:role=> "button"}
-        %i.glyphicon.glyphicon-plus
-          Event
+  %h1 Engineering Events
+  .row
+    .pull-right
+      = link_to new_event_path do
+        %button.btn.btn-success.btn-sm{:role=> "button"}
+          %i.glyphicon.glyphicon-plus
+            Event
 
   .row
-    .col-md-8
+    .col-md-8{:style=> "padding-top:23px"}
       %ul.bxslider
         - @events.each do |event|
           %li
@@ -23,44 +24,67 @@
               .pull-right{:style=> "color:white;font-size:4px;background-color:green;padding:2px"}
                 = event.status
 
-
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Title
-        %th Description
-        %th Image
-        %th Venue
-        %th Start Date
-        %th End Date
-        %th Status
-
-    %tbody
     - @events.each do |event|
-      %tr
-        %td= event.title
-        %td= event.content
-        %td= image_tag(event.image.thumb.url)
-        %td= event.venue
-        %td= event.start_date
-        %td= event.end_date
-        %td
-          -# = event.status
-          %ul
-            %li
-              Upcoming: #{event.upcoming?}
-            %li
-              Ongoing: #{event.ongoing?}
-            %li
-              Ended: #{event.ended?}
-
-        %td
-          = link_to edit_event_path(event) do
-            %button.btn.btn-success.btn-sm{:role=>"button"}
-              %i.glyphicon.glyphicon-edit
-              Edit event
-        %td
-          = link_to event, method: :delete, data: {confirm: 'Do you want to delete this event?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
-            %button.btn.btn-danger.btn-sm{:role=>"button"}
-              %i.glyphicon.glyphicon-trash
+      .col-md-4
+        .card
+          .card-image
+            %img.img-responsive{:src => event.image.carousel.url}
+            %span.card-title= event.title
+          .card-content
+            %p= raw event.content
+            %small{:style=> "color:gray"}
+              Venue: #{event.venue} Time: #{event.created_at.to_formatted_s(:short)}
+          .card-action
+            = link_to edit_event_path(event) do
+              %button.btn.btn-success{:role=>"button"}
+                %i.glyphicon.glyphicon-edit
+                Edit
+            = link_to event, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+              %button.btn.btn-danger{:role=>"button"}
+                %i.glyphicon.glyphicon-trash
                 Delete
+            = link_to event_path(event) do
+              %button.btn.btn-primary.pull-right{:role=>"button"}
+                Read more
+
+
+  -# %table.table.table-striped
+  -#   %thead
+  -#     %tr
+  -#       %th Title
+  -#       %th Description
+  -#       %th Image
+  -#       %th Venue
+  -#       %th Start Date
+  -#       %th End Date
+  -#       %th Status
+  -#
+  -#   %tbody
+  -#   - @events.each do |event|
+  -#     %tr
+  -#       %td= event.title
+  -#       %td= event.content
+  -#       %td= image_tag(event.image.thumb.url)
+  -#       %td= event.venue
+  -#       %td= event.start_date
+  -#       %td= event.end_date
+  -#       %td
+  -#         -# = event.status
+  -#         %ul
+  -#           %li
+  -#             Upcoming: #{event.upcoming?}
+  -#           %li
+  -#             Ongoing: #{event.ongoing?}
+  -#           %li
+  -#             Ended: #{event.ended?}
+  -#
+  -#       %td
+  -#         = link_to edit_event_path(event) do
+  -#           %button.btn.btn-success.btn-sm{:role=>"button"}
+  -#             %i.glyphicon.glyphicon-edit
+  -#             Edit event
+  -#       %td
+  -#         = link_to event, method: :delete, data: {confirm: 'Do you want to delete this event?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+  -#           %button.btn.btn-danger.btn-sm{:role=>"button"}
+  -#             %i.glyphicon.glyphicon-trash
+  -#               Delete
