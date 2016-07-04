@@ -1,6 +1,51 @@
-%footer.footer
-  .container.footnotes.pull-right
-    %p.pull-right.back-to-top-link
-      %a.text-muted{ href: "#"}
-        %span.glyphicon.glyphicon-chevron-up{aria: { hidden: 'true' }}
-        Back to top
+.container.footer
+  .row#footer-content
+    .col-xs-3
+      %ul.list-unstyled
+        %li
+          College Of Engineering
+          %li
+            %li= link_to 'Home', home_path
+            %li= link_to 'About Engineering', about_engineering_path
+            %li= link_to 'Student Life', student_life_path
+            %li= link_to 'Study In CPU', study_in_cpu_path
+            %li= link_to 'News', news_index_path
+            %li= link_to 'Events', events_path
+    .col-xs-3
+      %ul.list-unstyled
+        %li
+          Academic Programs
+          %li
+            - @departments.each do |department|
+              %li{:id => department.id}
+                %a{:href => department_path(department.id)}
+                  = department.name
+    .col-xs-3
+      %ul.list-unstyled
+        %li
+          Services
+          %li
+            %li
+              %a{:href => "#"} Research
+            %li
+              %a{:href => "#"} Outreach
+            %li
+              %a{:href => "#"} CPU Engineer
+    .col-xs-3
+      %ul.list-unstyled
+        %li
+          Contact Us
+          %li
+            %li
+              Contact #: 6549684685416
+            %li
+              Email Address: aosdnas@gmail.com
+            %li
+              FB: asdfasfadfsafa
+            %li
+              Twitter: afdsafsafs
+  %hr
+    .row#footer-bottom
+      .col-xs-6
+      .col-xs-6
+        %p.text-muted.pull-right © 2016 CPU College Of Engineering. All rights reserved

@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
+    
   def set_departments
-    @departments = Department.all().order(:name)
+    @departments = Department.all.order(:name)
   end
 
 end

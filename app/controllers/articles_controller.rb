@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all.sort { |x,y| y.created_at <=> x.created_at }
   end
 
+  # TODO i might consider making this quite better to do GUI-wise
   def toggle_featured
     @article = Article.find params[:id]
 

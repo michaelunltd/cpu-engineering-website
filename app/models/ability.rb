@@ -13,8 +13,6 @@ class Ability
       can :read, :all
     end
 
-# TODO dept admin can only edit their dept info DONE
-
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

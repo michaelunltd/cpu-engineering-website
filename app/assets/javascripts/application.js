@@ -21,6 +21,7 @@
 //= require tinymce
 //= require data-confirm-modal
 //= require jquery.bootstrap-autohidingnavbar
+//= require backtop
 
 
 function readURL(input) {

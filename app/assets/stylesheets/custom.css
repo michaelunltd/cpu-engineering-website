@@ -1,3 +1,4 @@
+/*COMMON*/
 * {
     margin: 0;
 }
@@ -8,20 +9,19 @@ html, body {
 body {
     padding-top: 70px;
 }
-footer {
-  border-top: solid #EEEEEE;
+.footer {
   border-width: thin;
-  margin-top: 4%;
-  margin-left: 4%;
-  margin-right: 4%;
-  margin-bottom: 3%
-}
-
-.back-to-top-link {
+  border-top: thick solid #772953;
   margin-top: 2.5%;
 }
+#footer-content{
+  padding-top: 2.5%;
+}
+#footer-bottom {
+  padding-bottom: 2.5%;
+}
 
-/*SLIDFER*/
+/*SLIDER*/
 .bx-viewport, .bx-wrapper {
     position: relative;
     width: 100%;
@@ -121,28 +121,14 @@ footer {
 }
 
 /*THIS IS FOR SCROLLSPY STATIC PAGES*/
-.deans-welome-section {
+.even-section {
     height: 100%;
     padding: 2.5%;
     text-align: center;
     background: #fff;
 }
 
-.history-section {
-    height: 100%;
-    padding: 2.5%;
-    text-align: center;
-    background: #eee;
-}
-
-.mission-section {
-    height: 100%;
-    padding: 2.5%;
-    text-align: center;
-    background: #fff;
-}
-
-.vision-section {
+.odd-section {
     height: 100%;
     padding: 2.5%;
     text-align: center;
@@ -163,6 +149,7 @@ footer {
   box-sizing: border-box;
   border-radius: 2px;
   background-clip: padding-box;
+  margin-bottom: 10px;
 }
 .card span.card-title {
     color: #fff;
@@ -203,7 +190,10 @@ footer {
 }
 .card .card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
-  padding: 16px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 28px;
 }
 .card .card-action a {
   color: #E95420;
@@ -214,4 +204,9 @@ footer {
 .card .card-action a:hover {
   color: #838383;
   text-decoration: none;
+}
+
+
+#back-to-top:hover {
+  background-color: #E95420;
 }

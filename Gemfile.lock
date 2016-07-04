@@ -58,6 +58,11 @@ GEM
     autoprefixer-rails (6.3.6)
       execjs
     awesome_print (1.6.1)
+    backtop (1.0.1)
+      coffee-rails (> 3.0.0)
+      font-awesome-rails
+      rails (> 3.2.0)
+      sass-rails (> 3.0.0)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
     better_errors (2.1.1)
@@ -104,6 +109,8 @@ GEM
     execjs (2.6.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
     git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -268,6 +275,7 @@ PLATFORMS
 DEPENDENCIES
   active_record-acts_as
   awesome_print
+  backtop
   better_errors
   bootstrap-autohidingnavbar-rails
   bootstrap-sass (~> 3.3.6)
@@ -279,6 +287,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   data-confirm-modal!
+  font-awesome-rails
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails

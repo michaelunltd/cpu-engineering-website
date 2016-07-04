@@ -21,41 +21,43 @@
           %small{:style=> "color:gray"}
             by: #{n.author} at #{n.created_at.to_formatted_s(:short)}
         .card-action
-          = link_to news_path(n) do
-            %span.pull-right Read more
-    -# .row
-    -#   .col-md-3
-    -#     %img{:src => n.image.thumb.url, :style=>"width:120px, height:120px, position:inherit, float:left"}
-    -#   .col-md-3
-    -#     .row
-    -#       %h2= n.title
-    -#     .row
-    -#       %h3= raw n.content
-    -# %hr/
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Title
-        %th Content
-        %th Image
-        %th Author
-        %th Edit
-        %th Delete
-    %tbody
-    - @news.each do |n|
-      %tr
-        %td= n.title
-        %td= raw n.content
-        %td
-          %img.img-circle{:src => n.image.thumb.url, :style=>"width:50px"}
-        %td= n.author
-        %td
           = link_to edit_news_path(n) do
-            %button.btn.btn-success.btn-sm{:role=>"button"}
+            %button.btn.btn-success{:role=>"button"}
               %i.glyphicon.glyphicon-edit
-              Edit News
-        %td
+              Edit
           = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
-            %button.btn.btn-danger.btn-sm{:role=>"button"}
+            %button.btn.btn-danger{:role=>"button"}
               %i.glyphicon.glyphicon-trash
-                Delete
+              Delete
+          = link_to news_path(n) do
+            %button.btn.btn-primary.pull-right{:role=>"button"}
+              Read more
+          -# = link_to news_path(n) do
+          -#   %span.pull-right Read more
+  -# %table.table.table-striped
+  -#   %thead
+  -#     %tr
+  -#       %th Title
+  -#       %th Content
+  -#       %th Image
+  -#       %th Author
+  -#       %th Edit
+  -#       %th Delete
+  -#   %tbody
+  -#   - @news.each do |n|
+  -#     %tr
+  -#       %td= n.title
+  -#       %td= raw n.content
+  -#       %td
+  -#         %img.img-circle{:src => n.image.thumb.url, :style=>"width:50px"}
+  -#       %td= n.author
+  -#       %td
+  -#         = link_to edit_news_path(n) do
+  -#           %button.btn.btn-success.btn-sm{:role=>"button"}
+  -#             %i.glyphicon.glyphicon-edit
+  -#             Edit News
+  -#       %td
+  -#         = link_to n, method: :delete, data: {confirm: 'Do you want to delete this news?', verify: 'Delete', verify_text: 'Type "Delete" to confirm'} do
+  -#           %button.btn.btn-danger.btn-sm{:role=>"button"}
+  -#             %i.glyphicon.glyphicon-trash
+  -#               Delete
