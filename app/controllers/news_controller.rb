@@ -48,7 +48,7 @@ class NewsController < ApplicationController
     private
 
     def news_params
-        params.require(:news).permit(:title, :content, :image, :image_cache, :author)
+        params.require(:news).permit(:title, :caption, :content, :image, :image_cache, :author)
     end
 
     def find_news

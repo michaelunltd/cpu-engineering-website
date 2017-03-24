@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160608065143) do
     t.integer  "actable_id"
     t.string   "actable_type"
     t.string   "title"
+    t.string   "caption"
     t.string   "image"
     t.string   "content"
     t.boolean  "featured",     default: false

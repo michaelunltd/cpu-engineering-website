@@ -3,6 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.actable
       t.string :title
+      t.string :caption
       t.string :image
       t.string :content
       t.boolean :featured, default: false

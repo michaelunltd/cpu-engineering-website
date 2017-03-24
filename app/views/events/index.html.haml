@@ -8,7 +8,7 @@
             Event
 
   .row
-    .col-md-8{:style=> "padding-top:23px"}
+    .col-md-8{:style=> "padding-top:24px"}
       %ul.bxslider
         - @events.each do |event|
           %li
@@ -31,7 +31,7 @@
             %img.img-responsive{:src => event.image.carousel.url}
             %span.card-title= event.title
           .card-content
-            %p= raw event.content
+            %p= event.content.truncate(180)
             %small{:style=> "color:gray"}
               Venue: #{event.venue} Time: #{event.created_at.to_formatted_s(:short)}
           .card-action

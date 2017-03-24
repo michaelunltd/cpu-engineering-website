@@ -10,7 +10,7 @@
     - @latest.each do |n|
       %li
         = link_to news_path(n) do
-          = image_tag(n.image.carousel.url, title: n.content)
+          = image_tag(n.image.carousel.url, title: n.caption)
   - @news.each do |n|
     .col-md-4
       .card
@@ -18,7 +18,7 @@
           %img.img-responsive{:src => n.image.carousel.url}
           %span.card-title= n.title
         .card-content
-          %p= raw n.content
+          %p= n.caption.truncate(180)
           %small{:style=> "color:gray"}
             by: #{n.author} at #{n.created_at.to_formatted_s(:short)}
         .card-action
